@@ -1,0 +1,28 @@
+{
+  "name": "kataclism",
+  "version": "1.0.0",
+  "description": "Bootstrapper for code kata in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrieleLippi/kataclism.git"
+  },
+  "keywords": ["code kata", "kata", "javascript kata"],
+  "author": "Gabriele Lippi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrieleLippi/kataclism/issues"
+  },
+  "homepage": "https://github.com/GabrieleLippi/kataclism#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.2"
+  }
+}
