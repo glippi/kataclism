@@ -1,6 +1,6 @@
 # 🥋⛩️ Kataclism
 
-Scaffolding for practicing code kata in JavaScript.
+Bootstrapper for practicing code kata in JavaScript.
 
 ## Directories:
 ```
