@@ -3,37 +3,29 @@ const shell = require('shelljs')
 const fs = require('fs')
 const colors = require('colors/safe')
 
-// Set prompt as green
 prompt.message = colors.green('Replace')
-
-/*
- * Command function
- */
 
 module.exports = (args, options, logger) => {
   const variant = options.language || 'default';
   const templatePath = `${__dirname}/templates/${variant}`;
   const localPath = process.cwd()
 
-  /*
-   * Copy Template
-   */
-
   if (fs.existsSync(templatePath)) {
-    logger.info('Copying files…')
-    shell.mkdir('-p', `${args.template}`);
-    console.log(`${localPath}/${args.template}`)
-    shell.cp('-R', `${templatePath}/*`,`${localPath}/${args.template}`)
-    logger.info('✔ The files have been copied!')
+    logger.info('Creating scaffolding...')
+    shell.mkdir('-p', `${args.kata}`);
+    console.log(`${localPath}/${args.kata}`)
+    shell.cp('-R', `${templatePath}/*`,`${localPath}/${args.kata}`)
+    logger.info('✔ Creation completed!')
   } else {
-    logger.error(`The requested template for ${args.template} wasn’t found.`)
+    logger.error(`The requested template for ${args.kata} wasn’t found.`)
     process.exit(1)
   }
 
-  /*
-   * File variables
-   */
+    shell.ls('-Rl', '.').forEach(entry => {
+      if (entry.isFile()) {
+        shell.sed('-i', `""`, `"${args.kata}"` , entry.name);
+      }
+    });
 
-  // TODO: replace name in package json
   logger.info('✔ Success!')
 }
