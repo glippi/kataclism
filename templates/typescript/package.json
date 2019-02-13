@@ -1,0 +1,32 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "Kata bootstrapped with kataclism",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  "jest": {
+    "roots": [ "src/", "test" ],
+    "testMatch": [
+      "/__tests__/.*\\.(ts|tsx|js)",
+      "**/?(*.)(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.3",
+    "@types/typescript": "^2.0.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}

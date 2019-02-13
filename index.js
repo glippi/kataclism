@@ -6,7 +6,7 @@ prog
   .version('1.0.0')
   .command('create', 'Create a new kata')
   .argument('<kata>', 'Name of the kata')
-  .option('--l <language>', 'Choose between JavaScript or TypeScript')
+  .option('--t', 'Setup kata with TypeScript', prog.BOOLEAN)
   .action(createCmd)
 
 prog.parse(process.argv)
