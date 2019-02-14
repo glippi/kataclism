@@ -1,0 +1,9 @@
+{
+  "bs-dev-dependencies": [
+    "bs-jest"
+  ],
+  "sources": [
+    "src",
+    "__tests__"
+  ]
+}

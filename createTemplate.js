@@ -19,3 +19,9 @@ module.exports = (args, options, logger) => {
   shell.exec("yarn")
   logger.info('✔ Creation completed!')
 }
+
+// TODO: REASON
+//  bsb -init ${kataName} -theme basic-reason
+//  cd ${kataName}
+//  yarn build 
+// bsb -make-world

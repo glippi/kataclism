@@ -1,0 +1,19 @@
+{
+  "name": "reason",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "bsb -make-world",
+    "test": "npm run build && jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bs-jest": "^0.3.2"
+  },
+  "dependencies": {
+    "bs-platform": "^4.0.18"
+  }
+}
