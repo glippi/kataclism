@@ -14,6 +14,8 @@ module.exports = (args, options, logger) => {
     logger.info('Creating scaffolding...')
     shell.mkdir('-p', `${args.kata}`);
     shell.cp('-R', `${templatePath}/*`,`${localPath}/${args.kata}`)
+    shell.cd(`${localPath}/${args.kata}`)
+    shell.exec("yarn")
     logger.info('✔ Creation completed!')
   } else {
     logger.error(`The requested template for ${args.kata} wasn’t found.`)
