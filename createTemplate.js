@@ -6,19 +6,16 @@ const colors = require('colors/safe')
 prompt.message = colors.green('Replace')
 
 module.exports = (args, options, logger) => {
-  const variant = options.t ? 'typescript' : 'javascript';
-  const templatePath = `${__dirname}/templates/${variant}`;
+  const templateType = options.t ? 'typescript' : 'javascript';
+  const templatePath = `${__dirname}/templates/${templateType}`;
+  const kataName = args.kata
   const localPath = process.cwd()
+  const kataPath = `${localPath}/${kataName}`
 
-  if (fs.existsSync(templatePath)) {
-    logger.info('Creating scaffolding...')
-    shell.mkdir('-p', `${args.kata}`);
-    shell.cp('-R', `${templatePath}/*`,`${localPath}/${args.kata}`)
-    shell.cd(`${localPath}/${args.kata}`)
-    shell.exec("yarn")
-    logger.info('✔ Creation completed!')
-  } else {
-    logger.error(`The requested template for ${args.kata} wasn’t found.`)
-    process.exit(1)
-  }
+  logger.info('Creating scaffolding...')
+  shell.mkdir('-p', `${kataName}`);
+  shell.cp('-R', `/${templatePath}/*`, kataPath)
+  shell.cd(kataPath)
+  shell.exec("yarn")
+  logger.info('✔ Creation completed!')
 }
