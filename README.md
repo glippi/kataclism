@@ -1,6 +1,6 @@
 # 🥋⛩️ Kataclism
 
-Bootstrapper for practicing code kata in JavaScript.
+> A violent upheaval that causes your terminal to scaffold an entire new kata
 
 ## Directories:
 ```
