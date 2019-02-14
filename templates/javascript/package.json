@@ -6,6 +6,10 @@
     "test": "jest",
     "watch": "jest --watchAll"
   },
+  "babel": {
+   "presets": ["@babel/preset-env"],
+   "plugins": ["@babel/plugin-proposal-class-properties"]
+  },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
