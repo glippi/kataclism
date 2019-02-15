@@ -1,6 +1,11 @@
-# 🥋⛩️ Kataclism
+# 🥋⛩️  {{APP_TITLE}}
 
-Bootstrapper for practicing code kata in JavaScript.
+This project was bootstrapped with [Kataclism](https://github.com/glippi/kataclism).
+
+## Usage
+For execute the tests, just run:
+- `yarn test` => if you want ro run the tests only once
+- `yarn watch` => if you want ro keep test refreshing as you code
 
 ## Directories:
 ```
@@ -14,12 +19,4 @@ Bootstrapper for practicing code kata in JavaScript.
 |--.prettierrc
 ```
 
-## DevDependencies:
-
-  * jest
-  * babel
-  * prettier
-
-### Scripts:
-
-`npm run test` will execute jest.
+[Read the rest of the documentation here.](https://github.com/glippi/kataclism)
