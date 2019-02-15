@@ -19,11 +19,13 @@ test("Create a directory with the name of the kata", () => {
 });
 
 test("Copy all files from template/javascript to the new directory just created", () => {
-  const kataDirectory = shell.cd(KATADIRECTORY);
-  const kataDirectoryFiles = shell.ls();
+  const kataDirectoryFiles = shell.ls(KATADIRECTORY);
 
   expect(kataDirectoryFiles).toContain("package.json");
+});
 
-  // go to previous directory in order to remove KATADIRECTORY
-  shell.cd("../");
+test("Node modules should be already installed inside the new kata folder", () => {
+  const kataDirectoryFiles = shell.ls(KATADIRECTORY);
+
+  expect(kataDirectoryFiles).toContain("node_modules");
 });
