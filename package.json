@@ -35,7 +35,7 @@
    "plugins": ["@babel/plugin-proposal-class-properties"]
   },
   "jest": {
-    "testPathIgnorePatterns": [ "/node_modules", "/templates"]
+    "testPathIgnorePatterns": [ "/node_modules", "/templates", "/bowling-kata"]
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
