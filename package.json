@@ -2,7 +2,25 @@
   "name": "kataclism",
   "version": "1.0.0",
   "description": "Bootstrapper for code kata in JavaScript",
-  "main": "index.js",
+  "keywords": [
+    "code kata",
+    "kata",
+    "javascript kata",
+    "typescript kata"
+  ],
+  "homepage": "https://github.com/GabrieleLippi/kataclism#readme",
+  "bugs": {
+    "url": "https://github.com/GabrieleLippi/kataclism/issues"
+  },
+  "license": "MIT",
+  "author": "Gabriele Lippi",
+  "files": [
+    "index.js",
+    "createTemplate.js"
+  ],
+  "bin": {
+    "kataclism": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GabrieleLippi/kataclism.git"
@@ -11,37 +29,10 @@
     "test": "jest",
     "watch": "jest --watchAll"
   },
-  "keywords": [
-    "code kata",
-    "kata",
-    "javascript kata",
-    "typescript kata"
-  ],
-  "author": "Gabriele Lippi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GabrieleLippi/kataclism/issues"
-  },
-  "homepage": "https://github.com/GabrieleLippi/kataclism#readme",
   "dependencies": {
     "caporal": "^1.1.0",
     "chalk": "^2.4.2",
     "shelljs": "^0.8.3"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules",
-      "/templates",
-      "/bowling-kata"
-    ]
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -51,5 +42,23 @@
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
     "prettier": "^1.15.2"
+  },
+   "engines": {
+      "node": ">=4"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules",
+      "/templates",
+      "/bowling-kata"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   }
 }
