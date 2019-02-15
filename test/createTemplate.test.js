@@ -1,9 +1,10 @@
 const shell = require("shelljs");
 
+const KATACLISM = "node index.js";
 const KATADIRECTORY = "bowling-kata";
 
 beforeEach(() => {
-  shell.exec(`kataclism create ${KATADIRECTORY}`);
+  shell.exec(`${KATACLISM} create ${KATADIRECTORY}`);
 });
 
 afterEach(() => {
