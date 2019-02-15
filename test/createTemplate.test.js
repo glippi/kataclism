@@ -3,12 +3,10 @@ const shell = require("shelljs");
 const KATADIRECTORY = "bowling-kata";
 
 beforeEach(() => {
-  // Create a kata named bowling-kata
   shell.exec(`kataclism create ${KATADIRECTORY}`);
 });
 
 afterEach(() => {
-  // Delete the directories created by kataclism
   shell.rm("-rf", KATADIRECTORY);
 });
 
