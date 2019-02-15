@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
+
 # 🥋⛩️ Kataclism
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
