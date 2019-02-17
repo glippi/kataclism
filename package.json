@@ -14,12 +14,8 @@
   },
   "license": "MIT",
   "author": "Gabriele Lippi",
-  "files": [
-    "index.js",
-    "createTemplate.js"
-  ],
   "bin": {
-    "kataclism": "./index.js"
+    "kataclism": "./index.ts"
   },
   "repository": {
     "type": "git",
@@ -30,35 +26,36 @@
     "watch": "jest --watchAll"
   },
   "dependencies": {
+    "@types/node": "^11.9.4",
+    "cac": "^6.4.2",
     "caporal": "^1.1.0",
     "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "fs-extra": "^7.0.1",
+    "path": "^0.12.7",
     "shelljs": "^0.8.3"
   },
-  "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.6",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
-    "jest": "^23.6.0",
-    "prettier": "^1.15.2"
-  },
-   "engines": {
-      "node": ">=4"
-  },
   "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules",
-      "/templates",
-      "/bowling-kata"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
+    "roots": [
+      ".",
+      "src/",
+      "test"
     ],
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
+    "testMatch": [
+      "/__tests__/.*\\.(ts|tsx|js)",
+      "**/?(*.)(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.3",
+    "@types/typescript": "^2.0.0",
+    "jest": "^24.1.0",
+    "nodemon": "^1.18.10",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
   }
 }

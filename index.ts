@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-const scaffoldKata = require("./createTemplate");
+import { createTemplate } from "./lib/createTemplate"
 const cli = require("cac")();
 
 cli
   .command("create <kata>")
-  .action((kata, options) => {
-    console.log({ kata, options });
+  .action((kata: string, options: boolean) => {
+    createTemplate(kata, options)
   })
   .option("--t", "Setup for TypeScript");
 
