@@ -27,6 +27,8 @@
     "@types/jest-diff": "^20.0.1",
     "cac": "^6.4.2",
     "chalk": "^2.4.2",
+    "fs-extra": "^7.0.1",
+    "path": "^0.12.7",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
