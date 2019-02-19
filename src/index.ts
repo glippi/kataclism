@@ -7,6 +7,6 @@ cli
   .action((kata: string, options: boolean) => {
     createTemplate(kata, options)
   })
-  .option("--t", "Setup for TypeScript");
+  .option("-t, --typescript", "Setup for TypeScript");
 
 cli.parse();
