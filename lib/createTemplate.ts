@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 const shell = require("shelljs");
 const chalk = require("chalk");
+const fs = require('fs-extra')
+const path = require('path')
 import { createPackageJson }  from "./createPackageJson"
 
-export function createTemplate(kata: string, options: boolean) {
- const templateType = options ? "typescript" : "javascript";
+function writePackageJson(dir: string, contentJson: any) {
+  fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2))
+}
+
+export function createTemplate(kata: string, options: any) {
+ const templateType = options.t ? "typescript" : "javascript";
  const kataName = kata;
  const localPath = `${process.cwd()}`;
  const templatePath = `${localPath}/templates/${templateType}`;
@@ -15,7 +21,7 @@ export function createTemplate(kata: string, options: boolean) {
  console.log(chalk.yellow("Scaffolding kata structure..."));
  shell.mkdir("-p", `${kataName}`);
  shell.cp("-R", `${templatePath}/*`, kataPath);
- shell.touch(packageJson, kataPath);
+ writePackageJson(kataPath, packageJson)
  shell.cd(kataPath);
  shell.exec("yarn");
  console.log(chalk.green(`\nKata correctly scaffolded!\n`));
