@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { createTemplate } from "./lib/createTemplate"
+import { createTemplate } from "../lib/createTemplate"
 const cli = require("cac")();
 
 cli

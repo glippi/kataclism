@@ -1,43 +1,17 @@
 {
-  "name": "kataclism",
+  "name": "",
   "version": "1.0.0",
-  "description": "Bootstrapper for code kata in JavaScript",
-  "keywords": [
-    "code kata",
-    "kata",
-    "javascript kata",
-    "typescript kata"
-  ],
-  "homepage": "https://github.com/GabrieleLippi/kataclism#readme",
-  "bugs": {
-    "url": "https://github.com/GabrieleLippi/kataclism/issues"
-  },
-  "license": "MIT",
-  "author": "Gabriele Lippi",
-  "bin": {
-    "kataclism": "./index.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GabrieleLippi/kataclism.git"
-  },
+  "description": "Kata bootstrapped with kataclism",
+  "main": "src/index.ts",
   "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "jest",
     "watch": "jest --watchAll"
   },
-  "dependencies": {
-    "@types/node": "^11.9.4",
-    "cac": "^6.4.2",
-    "caporal": "^1.1.0",
-    "chalk": "^2.4.2",
-    "commander": "^2.19.0",
-    "fs-extra": "^7.0.1",
-    "path": "^0.12.7",
-    "shelljs": "^0.8.3"
-  },
   "jest": {
     "roots": [
-      ".",
       "src/",
       "test"
     ],
@@ -49,8 +23,16 @@
       "^.+\\.tsx?$": "ts-jest"
     }
   },
+  "dependencies": {
+    "@types/jest-diff": "^20.0.1",
+    "cac": "^6.4.2",
+    "chalk": "^2.4.2",
+    "shelljs": "^0.8.3"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.3",
+    "@types/node": "^11.9.4",
+    "@types/shelljs": "^0.8.3",
     "@types/typescript": "^2.0.0",
     "jest": "^24.1.0",
     "nodemon": "^1.18.10",
