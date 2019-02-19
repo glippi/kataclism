@@ -3,9 +3,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var shell = require("shelljs");
 var chalk = require("chalk");
+var fs = require('fs-extra');
+var path = require('path');
 var createPackageJson_1 = require("./createPackageJson");
+function writePackageJson(dir, contentJson) {
+    fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2));
+}
 function createTemplate(kata, options) {
-    var templateType = options ? "typescript" : "javascript";
+    var templateType = options.t ? "typescript" : "javascript";
+    console.log({ templateType: templateType });
     var kataName = kata;
     var localPath = "" + process.cwd();
     var templatePath = localPath + "/templates/" + templateType;
@@ -14,7 +20,7 @@ function createTemplate(kata, options) {
     console.log(chalk.yellow("Scaffolding kata structure..."));
     shell.mkdir("-p", "" + kataName);
     shell.cp("-R", templatePath + "/*", kataPath);
-    shell.touch(packageJson, kataPath);
+    writePackageJson(kataPath, packageJson);
     shell.cd(kataPath);
     shell.exec("yarn");
     console.log(chalk.green("\nKata correctly scaffolded!\n"));
