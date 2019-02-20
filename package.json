@@ -1,8 +1,23 @@
 {
-  "name": "",
+  "name": "kataclism",
   "version": "1.0.0",
-  "description": "Kata bootstrapped with kataclism",
-  "main": "src/index.ts",
+  "description": "Bootstrapper for code kata in JavaScript",
+  "keywords": [
+    "code kata",
+    "kata",
+    "javascript kata",
+    "typescript kata"
+  ],
+  "homepage": "https://github.com/GabrieleLippi/kataclism#readme",
+  "bugs": {
+    "url": "https://github.com/GabrieleLippi/kataclism/issues"
+  },
+  "license": "MIT",
+  "author": "Gabriele Lippi",
+  "main": "build/src/index.js",
+  "bin": {
+      "kataclism": "build/src/index.js"
+  },
   "scripts": {
     "start": "npm run build:live",
     "build": "tsc -p .",
@@ -21,7 +36,12 @@
     ],
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules",
+      "/templates",
+      "/bowling-kata"
+    ]
   },
   "dependencies": {
     "@types/jest-diff": "^20.0.1",
