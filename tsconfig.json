@@ -4,9 +4,13 @@
     "module": "commonjs",
     "lib": ["es6","dom"],
     "outDir": "build",
-    "rootDir": ".",
+    "rootDirs": ["src", "lib"],
     "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
-  }
+    "resolveJsonModule": true,
+    "listFiles": true
+  },
+  "files": [
+    "src/index.ts"
+  ]
 }
