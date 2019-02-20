@@ -9,17 +9,28 @@ var createPackageJson_1 = require("./createPackageJson");
 function writePackageJson(dir, contentJson) {
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2));
 }
+function exitBuildDirectory(path) {
+    return path.replace('build/lib/', '');
+}
 function createTemplate(kata, options) {
     var templateType = options.t ? "typescript" : "javascript";
-    console.log({ templateType: templateType });
     var kataName = kata;
-    var localPath = "" + process.cwd();
-    var templatePath = localPath + "/templates/" + templateType;
-    var kataPath = localPath + "/" + kataName;
+    var localPath = process.cwd();
+    var templatePath = exitBuildDirectory(__dirname + "/templates/" + templateType);
+    var kataPath = exitBuildDirectory(localPath + "/" + kataName);
     var packageJson = createPackageJson_1.createPackageJson(kataName);
+    if (fs.existsSync(kataPath)) {
+        console.error("\n");
+        console.error(chalk.red("Can't create kata project wiht name: " + kataName + "."));
+        console.error("\n");
+        console.error(chalk.red("The directory '" + kataName + "' already exist."));
+        console.error("\n");
+        process.exit(1);
+    }
     console.log(chalk.yellow("Scaffolding kata structure..."));
     shell.mkdir("-p", "" + kataName);
-    shell.cp("-R", templatePath + "/*", kataPath);
+    //fs.mkdirSync(
+    shell.cp("-R", "/" + templatePath + "/*", kataPath);
     writePackageJson(kataPath, packageJson);
     shell.cd(kataPath);
     shell.exec("yarn");
