@@ -1,4 +1,5 @@
 import { exec, rm, ls } from "shelljs"
+import { setupVariablesName } from '../lib/createTemplate'
 import { createPackageJson } from "../lib/createPackageJson";
 import { KATACLISM, KATANAME, KATADIRECTORY } from './envConstants'
 
@@ -34,7 +35,13 @@ test("Create a package json using the name of the kata as name", () => {
   expect(test.name).toBe(KATADIRECTORY);
 });
 
-test("Should create a README", ()=> {
-  const kataDirectoryFiles = ls(KATADIRECTORY);
-  expect(kataDirectoryFiles).toContain("README.md");
+test("Expect the template to be JavaScript", () => {
+  const { templateType } = setupVariablesName(KATANAME, {})
+  expect(templateType).toBe('javascript')
+})
+
+
+test("Expect the template to be TypeScript", () => {
+  const { templateType } = setupVariablesName(KATANAME, {t:true})
+  expect(templateType).toBe('typescript')
 })

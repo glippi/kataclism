@@ -18,14 +18,18 @@ function exitBuildDirectory(path: string): string {
   return path.replace('build/lib/', '')
 }
 
-export function createTemplate(kata: string, options: any) {
+export function setupVariablesName(kataName:string, options:any) {
  const templateType = options.t ? "typescript" : "javascript";
- const kataName = kata;
  const localPath = process.cwd()
  const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
  const packageJson = createPackageJson(kataName, options.t);
  const readMe = createReadme(kataName);
+ return { templateType, kataName, localPath, templatePath, kataPath, packageJson, readMe}
+}
+
+export function createTemplate(kata: string, options: any) {
+  const { templateType, kataName, localPath, templatePath, kataPath, packageJson, readMe} = setupVariablesName(kata, options)
 
 if (fs.existsSync(kataPath)) {
   console.error(`\n`)
