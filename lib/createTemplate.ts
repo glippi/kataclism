@@ -4,18 +4,21 @@ const chalk = require("chalk");
 const fs = require('fs-extra')
 const path = require('path')
 import { createPackageJson }  from "./createPackageJson"
-import { templateDirectory } from '../templateDirectory'
 
 function writePackageJson(dir: string, contentJson: any) {
   fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2))
+}
+
+function exitBuildDirectory(path: string): string {
+  return path.replace('build/lib/', '')
 }
 
 export function createTemplate(kata: string, options: any) {
  const templateType = options.t ? "typescript" : "javascript";
  const kataName = kata;
  const localPath = process.cwd()
- const templatePath = `${templateDirectory}/templates/${templateType}`;
- const kataPath = `${localPath}/${kataName}`;
+ const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
+ const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
  const packageJson = createPackageJson(kataName);
 
 if (fs.existsSync(kataPath)) {
@@ -29,7 +32,8 @@ if (fs.existsSync(kataPath)) {
 
  console.log(chalk.yellow("Scaffolding kata structure..."));
  shell.mkdir("-p", `${kataName}`);
- shell.cp("-R", `${templatePath}/*`, kataPath);
+ //fs.mkdirSync(
+ shell.cp("-R", `/${templatePath}/*`, kataPath);
  writePackageJson(kataPath, packageJson)
  shell.cd(kataPath);
  shell.exec("yarn");
