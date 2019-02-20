@@ -18,7 +18,7 @@ function createTemplate(kata, options) {
     var localPath = process.cwd();
     var templatePath = exitBuildDirectory(__dirname + "/templates/" + templateType);
     var kataPath = exitBuildDirectory(localPath + "/" + kataName);
-    var packageJson = createPackageJson_1.createPackageJson(kataName);
+    var packageJson = createPackageJson_1.createPackageJson(kataName, options.t);
     if (fs.existsSync(kataPath)) {
         console.error("\n");
         console.error(chalk.red("Can't create kata project wiht name: " + kataName + "."));

@@ -8,5 +8,5 @@ cli
     .action(function (kata, options) {
     createTemplate_1.createTemplate(kata, options);
 })
-    .option("--t, --typescript", "Setup for TypeScript");
+    .option("-t, --typescript", "Setup for TypeScript");
 cli.parse();
