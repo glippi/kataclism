@@ -33,3 +33,8 @@ test("Create a package json using the name of the kata as name", () => {
   const test = createPackageJson(KATADIRECTORY);
   expect(test.name).toBe(KATADIRECTORY);
 });
+
+test("Should create a README", ()=> {
+  const kataDirectoryFiles = ls(KATADIRECTORY);
+  expect(kataDirectoryFiles).toContain("README.md");
+})

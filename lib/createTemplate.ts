@@ -4,9 +4,14 @@ const chalk = require("chalk");
 const fs = require('fs-extra')
 const path = require('path')
 import { createPackageJson }  from "./createPackageJson"
+import { createReadme }  from "./createReadme"
 
 function writePackageJson(dir: string, contentJson: any) {
   fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2))
+}
+
+function writeReadme(dir: string, readMe: any) {
+  fs.writeFileSync(path.join(dir, 'README.md'), readMe)
 }
 
 function exitBuildDirectory(path: string): string {
@@ -20,6 +25,7 @@ export function createTemplate(kata: string, options: any) {
  const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
  const packageJson = createPackageJson(kataName, options.t);
+ const readMe = createReadme(kataName);
 
 if (fs.existsSync(kataPath)) {
   console.error(`\n`)
@@ -35,6 +41,7 @@ if (fs.existsSync(kataPath)) {
  //fs.mkdirSync(
  shell.cp("-R", `/${templatePath}/*`, kataPath);
  writePackageJson(kataPath, packageJson)
+ writeReadme(kataPath, readMe)
  shell.cd(kataPath);
  shell.exec("yarn");
  console.log(chalk.green(`\nKata correctly scaffolded!\n`));
