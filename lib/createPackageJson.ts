@@ -1,5 +1,41 @@
-export function createPackageJson(kataName: string) {
-    return {
+export function createPackageJson(kataName: string, isTypeScript = false ) {
+   return isTypeScript ?
+({
+  name: kataName,
+  version: "1.0.0",
+  description: "Kata bootstrapped with kataclism",
+  main: "build/src/index.js",
+  scripts: {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "jest",
+    "watch": "jest --watchAll"
+  },
+  jest: {
+    "roots": [ "src/", "test" ],
+    "testMatch": [
+      "/__tests__/.*\\.(ts|tsx|js)",
+      "**/?(*.)(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
+  },
+  devDependencies: {
+    "typescript": "^3.3.3",
+    "@types/jest": "^24.0.3",
+    "@types/typescript": "^2.0.0",
+    "@types/jest-diff": "^20.0.1",
+    "jest": "^24.1.0",
+    "ts-jest": "^23.10.5",
+    "jest-diff": "^24.0.0",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.2"
+  }
+})
+      :
+      ({
       name: kataName,
       private: true,
       version: "0.1.0",
@@ -14,14 +50,8 @@ export function createPackageJson(kataName: string) {
         plugins: ["@babel/plugin-proposal-class-properties"]
       },
       devDependencies: {
-        "@babel/core": "^7.1.6",
-        "@babel/plugin-proposal-class-properties": "^7.1.0",
-        "@babel/preset-env": "^7.1.6",
-        "babel-core": "^7.0.0-bridge.0",
-        "babel-jest": "^23.6.0",
-        jest: "^23.6.0",
-        prettier: "^1.15.2"
       }
-    };
+    });
   }
+
 

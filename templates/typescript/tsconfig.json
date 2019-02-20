@@ -4,7 +4,7 @@
     "module": "commonjs",
     "lib": ["es6","dom"],
     "outDir": "lib",
-    "rootDir": "src",
+    "rootDirs": ["src", "test"],
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true

@@ -19,7 +19,7 @@ export function createTemplate(kata: string, options: any) {
  const localPath = process.cwd()
  const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
- const packageJson = createPackageJson(kataName);
+ const packageJson = createPackageJson(kataName, options.t);
 
 if (fs.existsSync(kataPath)) {
   console.error(`\n`)
