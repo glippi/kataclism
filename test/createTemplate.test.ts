@@ -45,3 +45,8 @@ test("Expect the template to be TypeScript", () => {
   const { templateType } = setupVariablesName(KATANAME, {t:true})
   expect(templateType).toBe('typescript')
 })
+
+test("Expect the template to be TypeScript", () => {
+  const { templateType } = setupVariablesName(KATANAME, {t:true})
+  expect(templateType).toBe('typescript')
+})

@@ -1,6 +1,5 @@
 export function createReadme(appTitle: string) {
-  return `
-# 🥋⛩️  ${appTitle}
+  return `# 🥋⛩️  ${appTitle}
 
 This project was bootstrapped with [Kataclism](https://github.com/glippi/kataclism).
 
