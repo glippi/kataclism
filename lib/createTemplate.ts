@@ -10,7 +10,7 @@ function writePackageJson(dir: string, contentJson: any) {
   fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2))
 }
 
-function writeReadme(dir: string, readMe: any) {
+export function writeReadme(dir: string, readMe: any) {
   fs.writeFileSync(path.join(dir, 'README.md'), readMe)
 }
 
