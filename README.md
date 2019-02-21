@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
+
 # kataclism
 A kata bootstrapper for JS/TS
 
