@@ -11,5 +11,9 @@ A kata bootstrapper for JS/TS
  * run `yarn build`
  * run `yarn test` to verify that all tests are green
  * run `npm link kataclism`, in order to be able to call `kataclism` from the command line globally
- * bootstrap your `JavaScript` kata calling `kataclism create <your-project>`
- * bootstrap your `TypeScript` kata calling `kataclism create <your-project> -t`
+ 
+ #### bootstrap kata for JavaScript
+ `kataclism create <your-project>`
+ 
+ #### bootstrap kata for TypeScript
+ `kataclism create <your-project> -t`
