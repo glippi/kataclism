@@ -42,7 +42,6 @@ if (fs.existsSync(kataPath)) {
 
  console.log(chalk.yellow("Scaffolding kata structure..."));
  shell.mkdir("-p", `${kataName}`);
- //fs.mkdirSync(
  shell.cp("-R", `/${templatePath}/*`, kataPath);
  writePackageJson(kataPath, packageJson)
  writeReadme(kataPath, readMe)
