@@ -1,6 +1,5 @@
 import { exec, rm, ls, cd, cat } from "shelljs"
 import { setupVariablesName } from '../lib/createTemplate'
-import { createPackageJson } from "../lib/createPackageJson";
 import { KATACLISM, KATANAME, KATADIRECTORY } from './envConstants'
 
 
