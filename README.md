@@ -1,27 +1,12 @@
-[![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
+# kataclism
+A kata bootstrapper for JS/TS
 
-# 🥋⛩️ Kataclism
+## :warning: still under construction
 
-> A violent upheaval that causes your terminal to scaffold an entire new kata
-
-## Directories:
-```
-|--src
-   |---index.js
-|--test
-   |---index.test.js
-|--package.json
-|--README.MD
-|--.babelrc
-|--.prettierrc
-```
-
-## DevDependencies:
-
-  * jest
-  * babel
-  * prettier
-
-### Scripts:
-
-`npm run test` will execute jest.
+### build it locally
+ * clone the repo
+ * run `yarn install`
+ * run `yarn build`
+ * run `npm link kataclism`, in order to be able to call `kataclism` from the command line globally
+ * bootstrap your `JavaScript` kata calling `kataclism create <your-project>`
+ * bootstrap your `TypeScript` kata calling `kataclism create <your-project> -t`
