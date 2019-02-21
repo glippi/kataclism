@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-import { exec, sed, mkdir, cd, ls, cp } from 'shelljs'
+import { exec, sed, mkdir, cd, ls, cp, test } from 'shelljs'
 const chalk = require("chalk");
-const fs = require('fs-extra')
-const path = require('path')
 
 function exitBuildDirectory(path: string): string {
   return path.replace('build/lib/', '')
@@ -19,7 +17,7 @@ export function setupVariablesName(kataName:string, options:any) {
 export function createTemplate(kata: string, options: any) {
   const { templateType, kataName, localPath, templatePath, kataPath } = setupVariablesName(kata, options)
 
-if (fs.existsSync(kataPath)) {
+  if (test('-d', kataPath)) { 
   console.error(`\n`)
   console.error(chalk.red(`Can't create kata project wiht name: ${kataName}.`))
   console.error(`\n`)

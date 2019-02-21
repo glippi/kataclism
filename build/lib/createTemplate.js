@@ -3,8 +3,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var shelljs_1 = require("shelljs");
 var chalk = require("chalk");
-var fs = require('fs-extra');
-var path = require('path');
 function exitBuildDirectory(path) {
     return path.replace('build/lib/', '');
 }
@@ -18,7 +16,7 @@ function setupVariablesName(kataName, options) {
 exports.setupVariablesName = setupVariablesName;
 function createTemplate(kata, options) {
     var _a = setupVariablesName(kata, options), templateType = _a.templateType, kataName = _a.kataName, localPath = _a.localPath, templatePath = _a.templatePath, kataPath = _a.kataPath;
-    if (fs.existsSync(kataPath)) {
+    if (shelljs_1.test('-d', kataPath)) {
         console.error("\n");
         console.error(chalk.red("Can't create kata project wiht name: " + kataName + "."));
         console.error("\n");

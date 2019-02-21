@@ -1,5 +1,5 @@
 {
-  "bowling-kata": "kataclism",
+  "name": "kataclism",
   "version": "1.0.0",
   "description": "Bootstrapper for code kata in JavaScript",
   "keywords": [
@@ -44,15 +44,13 @@
     ]
   },
   "dependencies": {
-    "@types/jest-diff": "^20.0.1",
     "cac": "^6.4.2",
     "chalk": "^2.4.2",
-    "fs-extra": "^7.0.1",
-    "path": "^0.12.7",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
     "@types/jest": "^24.0.3",
+    "@types/jest-diff": "^20.0.1",
     "@types/node": "^11.9.4",
     "@types/shelljs": "^0.8.3",
     "@types/typescript": "^2.0.0",
