@@ -1,5 +1,5 @@
 {
-  "name": "kataclism",
+  "bowling-kata": "kataclism",
   "version": "1.0.0",
   "description": "Bootstrapper for code kata in JavaScript",
   "keywords": [

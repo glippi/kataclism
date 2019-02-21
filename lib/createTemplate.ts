@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const shell = require("shelljs");
+import { exec, sed, mkdir, cd, ls, cp } from 'shelljs'
 const chalk = require("chalk");
 const fs = require('fs-extra')
 const path = require('path')
@@ -41,12 +41,12 @@ if (fs.existsSync(kataPath)) {
 }
 
  console.log(chalk.yellow("Scaffolding kata structure..."));
- shell.mkdir("-p", `${kataName}`);
- shell.cp("-R", `/${templatePath}/*`, kataPath);
- writePackageJson(kataPath, packageJson)
+ mkdir("-p", `${kataName}`);
+ cp("-R", `/${templatePath}/*`, kataPath);
  writeReadme(kataPath, readMe)
- shell.cd(kataPath);
- shell.exec("yarn");
+ cd(kataPath);
+ sed('-i', 'name', kataName, 'package.json');
+ exec("yarn");
  console.log(chalk.green(`\nKata correctly scaffolded!\n`));
  console.log(chalk.green(`You can enter the new created directory typing:\n`));
  console.log(chalk.cyan(`\tcd ${kataName}\n\n`));

@@ -1,4 +1,4 @@
-import { exec, rm, ls } from "shelljs"
+import { exec, rm, ls, cd, cat } from "shelljs"
 import { setupVariablesName } from '../lib/createTemplate'
 import { createPackageJson } from "../lib/createPackageJson";
 import { KATACLISM, KATANAME, KATADIRECTORY } from './envConstants'
@@ -30,9 +30,9 @@ test("Node modules should be already installed inside the new kata folder", () =
   expect(kataDirectoryFiles).toContain("node_modules");
 });
 
-test("Create a package json using the name of the kata as name", () => {
-  const test = createPackageJson(KATADIRECTORY);
-  expect(test.name).toBe(KATADIRECTORY);
+test("Check if the package.json contain the name of the kata for the 'name' field", () => {
+  const kataPackageJson = cat(`${KATADIRECTORY}/package.json`).stdout
+  expect(kataPackageJson).toMatch(new RegExp(KATANAME))
 });
 
 test("Expect the template to be JavaScript", () => {
