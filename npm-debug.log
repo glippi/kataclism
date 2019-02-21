@@ -1,0 +1,50 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'prettier:base',
+1 verbose cli   '--',
+1 verbose cli   '--list-different',
+1 verbose cli   'src/**/*.{ts,tsx}' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose run-script [ 'prettier:base' ]
+5 info lifecycle kataclism@1.0.0~prettier:base: kataclism@1.0.0
+6 verbose lifecycle kataclism@1.0.0~prettier:base: unsafe-perm in lifecycle true
+7 verbose lifecycle kataclism@1.0.0~prettier:base: PATH: /usr/share/npm/bin/node-gyp-bin:/home/gabriele/Templates/kataclism/node_modules/.bin:/tmp/yarn--1550765631094-0.9239733384255737:/home/gabriele/Templates/kataclism/node_modules/.bin:/home/gabriele/.config/yarn/link/node_modules/.bin:/home/gabriele/Templates/kataclism/node_modules/.bin:/home/gabriele/.config/yarn/link/node_modules/.bin:/home/gabriele/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/home/gabriele/bin:/usr/local/bin:/home/gabriele/.cargo/bin:/home/gabriele/bin:/usr/local/bin:/home/gabriele/.cargo/bin:/home/gabriele/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/java/jre1.6.0_24/bin/:/usr/java/jre1.6.0_24/bin/
+8 verbose lifecycle kataclism@1.0.0~prettier:base: CWD: /home/gabriele/Templates/kataclism
+9 silly lifecycle kataclism@1.0.0~prettier:base: Args: [ '-c',
+9 silly lifecycle   'prettier --parser typescript --single-quote "--list-different" "src/**/*.{ts,tsx}"' ]
+10 silly lifecycle kataclism@1.0.0~prettier:base: Returned: code: 1  signal: null
+11 info lifecycle kataclism@1.0.0~prettier:base: Failed to exec prettier:base script
+12 verbose stack Error: kataclism@1.0.0 prettier:base: `prettier --parser typescript --single-quote "--list-different" "src/**/*.{ts,tsx}"`
+12 verbose stack Exit status 1
+12 verbose stack     at EventEmitter.<anonymous> (/usr/share/npm/lib/utils/lifecycle.js:232:16)
+12 verbose stack     at emitTwo (events.js:126:13)
+12 verbose stack     at EventEmitter.emit (events.js:214:7)
+12 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:24:14)
+12 verbose stack     at emitTwo (events.js:126:13)
+12 verbose stack     at ChildProcess.emit (events.js:214:7)
+12 verbose stack     at maybeClose (internal/child_process.js:925:16)
+12 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+13 verbose pkgid kataclism@1.0.0
+14 verbose cwd /home/gabriele/Templates/kataclism
+15 error Linux 4.15.0-43-generic
+16 error argv "/usr/bin/node" "/usr/bin/npm" "run" "prettier:base" "--" "--list-different" "src/**/*.{ts,tsx}"
+17 error node v8.10.0
+18 error npm  v3.5.2
+19 error code ELIFECYCLE
+20 error kataclism@1.0.0 prettier:base: `prettier --parser typescript --single-quote "--list-different" "src/**/*.{ts,tsx}"`
+20 error Exit status 1
+21 error Failed at the kataclism@1.0.0 prettier:base script 'prettier --parser typescript --single-quote "--list-different" "src/**/*.{ts,tsx}"'.
+21 error Make sure you have the latest version of node.js and npm installed.
+21 error If you do, this is most likely a problem with the kataclism package,
+21 error not with npm itself.
+21 error Tell the author that this fails on your system:
+21 error     prettier --parser typescript --single-quote "--list-different" "src/**/*.{ts,tsx}"
+21 error You can get information on how to open an issue for this project with:
+21 error     npm bugs kataclism
+21 error Or if that isn't available, you can get their info via:
+21 error     npm owner ls kataclism
+21 error There is likely additional logging output above.
+22 verbose exit [ 1, true ]

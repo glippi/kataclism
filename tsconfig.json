@@ -3,12 +3,11 @@
     "target": "es5",
     "module": "commonjs",
     "lib": ["es6","dom"],
-    "outDir": "build",
-    "rootDirs": ["src", "lib"],
+    "outDir": "lib",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "listFiles": true
+    "resolveJsonModule": true
   },
   "files": [
     "src/index.ts"

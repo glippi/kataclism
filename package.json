@@ -14,16 +14,15 @@
   },
   "license": "MIT",
   "author": "Gabriele Lippi",
-  "main": "build/src/index.js",
+  "main": "lib/src/index.js",
   "bin": {
-      "kataclism": "build/src/index.js"
+    "kataclism": "lib/src/index.js"
   },
   "scripts": {
-    "start": "npm run build:live",
     "build": "tsc -p .",
-    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "test": "jest",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\""
   },
   "jest": {
     "roots": [
@@ -56,6 +55,7 @@
     "@types/typescript": "^2.0.0",
     "jest": "^24.1.0",
     "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
     "ts-jest": "^23.10.5",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
