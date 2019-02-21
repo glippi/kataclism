@@ -12,13 +12,13 @@ afterEach(() => {
 });
 
 test("Expect the template to be JavaScript", () => {
-  const { templateType } = setupVariablesName(KATANAME, {})
-  expect(templateType).toBe('javascript')
+  const { templatePath } = setupVariablesName(KATANAME, {})
+  expect(templatePath).toMatch(new RegExp('javascript'))
 })
 
 test("Expect the template to be TypeScript", () => {
-  const { templateType } = setupVariablesName(KATANAME, {t:true})
-  expect(templateType).toBe('typescript')
+  const { templatePath } = setupVariablesName(KATANAME, {t:true})
+  expect(templatePath).toMatch(new RegExp('typescript'))
 })
 
 test("Create a directory with the name of the kata", () => {

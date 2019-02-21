@@ -11,11 +11,11 @@ export function setupVariablesName(kataName:string, options:any) {
  const localPath = process.cwd()
  const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
- return { templateType, kataName, localPath, templatePath, kataPath }
+ return {  templatePath, kataPath }
 }
 
-export function createTemplate(kata: string, options: any) {
-  const { templateType, kataName, localPath, templatePath, kataPath } = setupVariablesName(kata, options)
+export function createTemplate(kataName: string, options: any) {
+  const {  templatePath, kataPath } = setupVariablesName(kataName, options)
 
   if (test('-d', kataPath)) { 
   console.error(`\n`)
@@ -27,7 +27,7 @@ export function createTemplate(kata: string, options: any) {
 }
 
  console.log(chalk.yellow("Scaffolding kata structure..."));
- mkdir("-p", `${kataName}`);
+ mkdir("-p", kataName);
  cp("-R", `/${templatePath}/*`, kataPath);
  cd(kataPath);
  sed('-i', 'name', kataName, 'package.json');

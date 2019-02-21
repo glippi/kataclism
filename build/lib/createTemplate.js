@@ -11,11 +11,11 @@ function setupVariablesName(kataName, options) {
     var localPath = process.cwd();
     var templatePath = exitBuildDirectory(__dirname + "/templates/" + templateType);
     var kataPath = exitBuildDirectory(localPath + "/" + kataName);
-    return { templateType: templateType, kataName: kataName, localPath: localPath, templatePath: templatePath, kataPath: kataPath };
+    return { templatePath: templatePath, kataPath: kataPath };
 }
 exports.setupVariablesName = setupVariablesName;
-function createTemplate(kata, options) {
-    var _a = setupVariablesName(kata, options), templateType = _a.templateType, kataName = _a.kataName, localPath = _a.localPath, templatePath = _a.templatePath, kataPath = _a.kataPath;
+function createTemplate(kataName, options) {
+    var _a = setupVariablesName(kataName, options), templatePath = _a.templatePath, kataPath = _a.kataPath;
     if (shelljs_1.test('-d', kataPath)) {
         console.error("\n");
         console.error(chalk.red("Can't create kata project wiht name: " + kataName + "."));
@@ -25,7 +25,7 @@ function createTemplate(kata, options) {
         process.exit(1);
     }
     console.log(chalk.yellow("Scaffolding kata structure..."));
-    shelljs_1.mkdir("-p", "" + kataName);
+    shelljs_1.mkdir("-p", kataName);
     shelljs_1.cp("-R", "/" + templatePath + "/*", kataPath);
     shelljs_1.cd(kataPath);
     shelljs_1.sed('-i', 'name', kataName, 'package.json');
