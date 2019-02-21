@@ -35,15 +35,14 @@ test("Check if the package.json contain the name of the kata for the 'name' fiel
   expect(kataPackageJson).toMatch(new RegExp(KATANAME))
 });
 
+test("Setup README with name provided for the kata", () => {
+  const kataPackageREADME = cat(`${KATADIRECTORY}/README.md`).stdout
+  expect(kataPackageREADME).toMatch(new RegExp(KATANAME))
+});
+
 test("Expect the template to be JavaScript", () => {
   const { templateType } = setupVariablesName(KATANAME, {})
   expect(templateType).toBe('javascript')
-})
-
-
-test("Expect the template to be TypeScript", () => {
-  const { templateType } = setupVariablesName(KATANAME, {t:true})
-  expect(templateType).toBe('typescript')
 })
 
 test("Expect the template to be TypeScript", () => {

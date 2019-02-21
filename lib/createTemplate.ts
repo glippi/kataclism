@@ -3,16 +3,6 @@ import { exec, sed, mkdir, cd, ls, cp } from 'shelljs'
 const chalk = require("chalk");
 const fs = require('fs-extra')
 const path = require('path')
-import { createPackageJson }  from "./createPackageJson"
-import { createReadme }  from "./createReadme"
-
-function writePackageJson(dir: string, contentJson: any) {
-  fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(contentJson, null, 2))
-}
-
-export function writeReadme(dir: string, readMe: any) {
-  fs.writeFileSync(path.join(dir, 'README.md'), readMe)
-}
 
 function exitBuildDirectory(path: string): string {
   return path.replace('build/lib/', '')
@@ -23,13 +13,11 @@ export function setupVariablesName(kataName:string, options:any) {
  const localPath = process.cwd()
  const templatePath = exitBuildDirectory(`${__dirname}/templates/${templateType}`);
  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`);
- const packageJson = createPackageJson(kataName, options.t);
- const readMe = createReadme(kataName);
- return { templateType, kataName, localPath, templatePath, kataPath, packageJson, readMe}
+ return { templateType, kataName, localPath, templatePath, kataPath }
 }
 
 export function createTemplate(kata: string, options: any) {
-  const { templateType, kataName, localPath, templatePath, kataPath, packageJson, readMe} = setupVariablesName(kata, options)
+  const { templateType, kataName, localPath, templatePath, kataPath } = setupVariablesName(kata, options)
 
 if (fs.existsSync(kataPath)) {
   console.error(`\n`)
@@ -43,9 +31,9 @@ if (fs.existsSync(kataPath)) {
  console.log(chalk.yellow("Scaffolding kata structure..."));
  mkdir("-p", `${kataName}`);
  cp("-R", `/${templatePath}/*`, kataPath);
- writeReadme(kataPath, readMe)
  cd(kataPath);
  sed('-i', 'name', kataName, 'package.json');
+ sed('-i', '{{APP_TITLE}}', kataName, 'README.md');
  exec("yarn");
  console.log(chalk.green(`\nKata correctly scaffolded!\n`));
  console.log(chalk.green(`You can enter the new created directory typing:\n`));
