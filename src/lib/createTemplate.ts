@@ -22,7 +22,7 @@ export function createTemplate(kataName: string, options: any) {
   if (test('-d', kataPath)) {
     console.error(`\n`)
     console.error(
-      chalk.red(`Can't create kata project wiht name: ${kataName}.`)
+      chalk.red(`Can't create kata project with name: ${kataName}.`)
     )
     console.error(`\n`)
     console.error(chalk.red(`The directory '${kataName}' already exist.`))

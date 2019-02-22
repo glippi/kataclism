@@ -28,10 +28,8 @@ test('Create a directory with the name of the kata', () => {
 })
 
 test('Abort installation if already exist a directory with the same name as KATA', () => {
-  const kataclismLogErrorInConsole = exec(`${KATACLISM} create ${KATA}`).stderr
-  expect(kataclismLogErrorInConsole).toBe(
-    "\n\nCan't create kata project wiht name: bowling-kata.\n\n\nThe directory 'bowling-kata' already exist.\n\n\n"
-  )
+  const errorCode = exec(`${KATACLISM} create ${KATA}`).code
+  expect(errorCode).toBe(1)
 })
 
 test('Copy all files from template/javascript to the new directory just created', () => {

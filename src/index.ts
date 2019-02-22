@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 import { createTemplate } from './lib/createTemplate'
 import { chooseKata } from './lib/chooseKata'
-const cli = require('cac')()
-const inquirer = require('inquirer')
+import inquirer from 'inquirer'
 import { Answers } from 'inquirer'
+import { getKatasList } from './resources/katas/getKatasList'
+import cac from 'cac'
 
-if (process.argv.length > 2) {
+const cli = cac()
+const allKatas = getKatasList()
+const isCustomKata = process.argv.length > 2
+
+if (isCustomKata) {
   cli
     .command('create <kata>')
     .action((kata: string, options: boolean) => {
@@ -20,8 +25,8 @@ if (process.argv.length > 2) {
       {
         type: 'list',
         name: 'kata',
-        message: 'Which is better?',
-        choices: ['bowling-kata', 'bank-kata', 'fizz-buzz-kata'],
+        message: 'Select the kata you want to practice',
+        choices: allKatas,
       },
     ])
     .then((answers: Answers) => {
