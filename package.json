@@ -14,9 +14,9 @@
   },
   "license": "MIT",
   "author": "Gabriele Lippi",
-  "main": "lib/src/index.js",
+  "main": "lib/index.js",
   "bin": {
-    "kataclism": "lib/src/index.js"
+    "kataclism": "lib/index.js"
   },
   "scripts": {
     "build": "tsc -p .",
@@ -49,12 +49,14 @@
     }
   },
   "dependencies": {
+    "@types/inquirer": "^0.0.43",
     "cac": "^6.4.2",
     "chalk": "^2.4.2",
+    "inquirer": "^6.2.2",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.3",
+    "@types/jest": "^24.0.6",
     "@types/jest-diff": "^20.0.1",
     "@types/node": "^11.9.4",
     "@types/shelljs": "^0.8.3",
