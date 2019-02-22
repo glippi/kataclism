@@ -4,11 +4,11 @@ import { setupVariablesName, createTemplate } from '../src/lib/createTemplate'
 const KATACLISM = 'node lib/index.js'
 const KATA = 'bowling-kata'
 
-beforeEach(() => {
+beforeAll(() => {
   exec(`${KATACLISM} create ${KATA}`)
 })
 
-afterEach(() => {
+afterAll(() => {
   rm('-rf', KATA)
 })
 
@@ -39,11 +39,6 @@ test('Copy all files from template/javascript to the new directory just created'
   expect(kataDirectoryFiles).toContain('package.json')
 })
 
-test('Install all dependencies', () => {
-  const kataDirectoryFiles = ls(KATA)
-  expect(kataDirectoryFiles).toContain('node_modules')
-})
-
 test("Check if the package.json contain the name of the kata for the 'name' field", () => {
   const kataPackageJson = cat(`${KATA}/package.json`).stdout
   expect(kataPackageJson).toMatch(new RegExp(KATA))
@@ -52,4 +47,9 @@ test("Check if the package.json contain the name of the kata for the 'name' fiel
 test('Setup README with name provided for the kata', () => {
   const kataPackageREADME = cat(`${KATA}/README.md`).stdout
   expect(kataPackageREADME).toMatch(new RegExp(KATA))
+})
+
+test('Install all dependencies', () => {
+  const kataDirectoryFiles = ls(KATA)
+  expect(kataDirectoryFiles).toContain('node_modules')
 })
