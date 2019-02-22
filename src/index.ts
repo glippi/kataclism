@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 import { createTemplate } from './lib/createTemplate'
+import { chooseKata } from './lib/chooseKata'
 const cli = require('cac')()
 const inquirer = require('inquirer')
+import { Answers } from 'inquirer'
 
 if (process.argv.length > 2) {
   cli
@@ -16,13 +18,14 @@ if (process.argv.length > 2) {
   inquirer
     .prompt([
       {
-        type: 'rawlist',
-        name: 'reptile',
+        type: 'list',
+        name: 'kata',
         message: 'Which is better?',
-        choices: ['alligator', 'crocodile'],
+        choices: ['bowling-kata', 'bank-kata', 'fizz-buzz-kata'],
       },
     ])
-    .then((answers: any) => {
-      console.info('Answer:', answers.reptile)
+    .then((answers: Answers) => {
+      console.info('Answer:', answers.kata)
+      chooseKata(answers)
     })
 }
