@@ -4,7 +4,10 @@
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
+<img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" />
+
 ## Directories:
+
 ```
 |--src
    |---index.js
@@ -18,9 +21,9 @@
 
 ## DevDependencies:
 
-  * jest
-  * babel
-  * prettier
+- jest
+- babel
+- prettier
 
 ### Scripts:
 
