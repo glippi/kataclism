@@ -5,9 +5,8 @@ function exitBuildDirectory(path: string): string {
 }
 
 export function extractFileName(path: string): string {
-  // TODO: refactor using regex, can't rely on split and indexing
-  const fileNameWithExtension = path.split('/')[8]
-  const fileNameWithoutExtension = fileNameWithExtension.split('.')[0]
+  const fileName = path.replace(/^.+\//, '')
+  const fileNameWithoutExtension = fileName.replace(/\.md/, '')
   return fileNameWithoutExtension
 }
 

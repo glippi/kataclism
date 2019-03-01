@@ -9,6 +9,8 @@ test('it should returns the list of all available katas in the directory', () =>
 })
 
 test('it should extract the name of the markdown file', () => {
-  const markdownFile = extractFileName('./src/resources/katas/bowling-kata.md')
-  expect(markdownFile).toBe('bowling-kata')
+  const markdownFileName = extractFileName(
+    './src/resources/katas/bowling-kata.md'
+  )
+  expect(markdownFileName).toBe('bowling-kata')
 })
