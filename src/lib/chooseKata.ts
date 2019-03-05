@@ -3,6 +3,6 @@ import { createTemplate } from './createTemplate'
 
 export function chooseKata(answers: Answers) {
   const choice = answers.kata
-  createTemplate(choice, {})
+  createTemplate(choice)
   return choice
 }

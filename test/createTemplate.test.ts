@@ -1,5 +1,5 @@
-import { exec, rm, ls, cd, cat } from 'shelljs'
-import { setupVariablesName, createTemplate } from '../src/lib/createTemplate'
+import { cat, exec, ls, rm } from 'shelljs'
+import { setupVariablesName } from '../src/lib/createTemplate'
 
 const KATACLISM = 'node lib/index.js'
 const KATA = 'bowling-kata'

@@ -22,8 +22,7 @@
     "build": "tsc -p .",
     "test": "jest",
     "watch": "jest --watchAll",
-    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
-    "precommit": "yarn run prettier"
+    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\""
   },
   "jest": {
     "roots": [
@@ -45,8 +44,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier-eslint --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "cac": "^6.4.2",
@@ -55,17 +61,22 @@
     "shelljs": "^0.8.3"
   },
   "devDependencies": {
+    "@types/inquirer": "^0.0.43",
     "@types/jest": "^24.0.6",
     "@types/jest-diff": "^20.0.1",
     "@types/node": "^11.9.4",
     "@types/shelljs": "^0.8.3",
     "@types/typescript": "^2.0.0",
-    "@types/inquirer": "^0.0.43",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
     "husky": "^1.3.1",
     "jest": "^24.1.0",
+    "lint-staged": "^8.1.5",
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0",
+    "prettier-eslint-cli": "^4.7.1",
     "ts-jest": "^23.10.5",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
