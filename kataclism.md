@@ -14,7 +14,7 @@ I created this package exactly for this reason: **reduce the time spent on boots
 # How does it works?
 There are two ways for taking advantage of `kataclism`:
 
-## Create a new empty project:
+## 1. Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
 Calling `kataclism` with the action `create` followed by the name of the project you want to start, will let `kataclism` bootstrap all the directories and dependecies structures.
 
@@ -23,7 +23,7 @@ Calling `kataclism` with the action `create` followed by the name of the project
 Just add `-t` option to bootstrap the project with `TypeScript`.
 
 
-## Choose one of the default katas:
+## 2. Choose one of the default katas:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
 Running `kataclism` without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you wanted to practice.
 By default, will be generated a `README` with all the instructions needed for practicing the kata you choosed.
