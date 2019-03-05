@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-import { exec, sed, mkdir, cd, ls, cp, test } from 'shelljs'
-const chalk = require('chalk')
+import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
+import chalk from 'chalk'
 
 function exitBuildDirectory(path: string): string {
   return path.replace('lib/lib/', '')
 }
 
-export function setupVariablesName(kataName: string, options: any) {
+export function setupVariablesName(kataName: string, options: { t?: boolean }) {
   const templateType = options.t ? 'typescript' : 'javascript'
   const localPath = process.cwd()
   const templatePath = exitBuildDirectory(
@@ -16,7 +16,7 @@ export function setupVariablesName(kataName: string, options: any) {
   return { templatePath, kataPath }
 }
 
-export function createTemplate(kataName: string, options: any) {
+export function createTemplate(kataName: string, options: {}) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
 
   if (test('-d', kataPath)) {

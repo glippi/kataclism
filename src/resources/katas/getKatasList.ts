@@ -11,9 +11,9 @@ export function extractFileName(path: string): string {
 }
 
 export function getKatasList() {
-  let katas: any = []
+  let katas: string[] = []
   const kataclismDirectory = exitBuildDirectory(__dirname)
-  ls(`${kataclismDirectory}/*.md`).forEach((file: any) => {
+  ls(`${kataclismDirectory}/*.md`).forEach(file => {
     katas.push(file)
   })
   const allKatas = katas.map((file: string) => extractFileName(file))
