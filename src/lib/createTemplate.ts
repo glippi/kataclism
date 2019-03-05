@@ -16,7 +16,7 @@ export function setupVariablesName(kataName: string, options: { t?: boolean }) {
   return { templatePath, kataPath }
 }
 
-export function createTemplate(kataName: string, options: {}) {
+export function createTemplate(kataName: string, options: {} = {}) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
 
   if (test('-d', kataPath)) {
