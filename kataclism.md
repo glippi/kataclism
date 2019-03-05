@@ -6,6 +6,12 @@
 
 # 🥋⛩️ Kataclism
 
+<img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
+
+<img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
+
+<img src="https://github.com/glippi/kataclism/blob/master/kataclism-ts.png" />
+
 ## Directories:
 
 ```
