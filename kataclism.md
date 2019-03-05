@@ -55,13 +55,13 @@ This one for `TypeScript`:
 Just execute `yarn test`, if you want to run the tests once, or `yarn watch` for keep the tests executing on each change.
 
 #### What is a code kata?
-For more info about the *what* and *why* behind code katas, check out [this article][http://codekata.com/]; and for a bit of story behind them [this one][http://codekata.com/kata/codekata-how-it-started/].
+For more info about the *what* and *why* behind code katas, check out [this article](http://codekata.com/); and for a bit of story behind them [this one](http://codekata.com/kata/codekata-how-it-started/).
 
 #### Where can I find code katas?
 Check out these two resources:
-   * [awesome-katas][https://github.com/gamontal/awesome-katas]
-   * [CodeKata][http://codekata.com/]
-   * [Coding Dojo][http://codingdojo.org/kata/]
+   * [awesome-katas](https://github.com/gamontal/awesome-katas)
+   * [CodeKata](http://codekata.com/)
+   * [Coding Dojo](http://codingdojo.org/kata/)
 
 
 ## License
