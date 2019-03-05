@@ -7,9 +7,9 @@
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
 
 # 🥋⛩️ Kataclism
-This project aims to facilitate the life of all the TDD disciples and kata practicioners working with `JavaScript` or `TypeScript`.
+This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners** working with `JavaScript` or `TypeScript`.
 As we know, in order to do a kata we need to setup always the same boring stuff, like `test`and `src` directories; moreover, we need to setup all the tooling that nowadays we need as JavaScript developers (babel, prettierc etc).
-I created this package exactly for this reason: *reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata*.
+I created this package exactly for this reason: **reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata**..
 
 # How does it works?
 There are two ways for taking advantage of `kataclism`:
