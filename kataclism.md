@@ -1,4 +1,6 @@
-<center><img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" width="500"/></center>
+<p align="center">
+   <img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" width="500"/>
+</p>
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
