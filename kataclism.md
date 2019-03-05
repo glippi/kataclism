@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" width="500"/>
+   <img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" width="700"/>
 </p>
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
@@ -51,3 +51,7 @@ This one for `TypeScript`:
 
 ##### How to run the tests?
 Just execute `yarn test`, if you want to run the tests once, or `yarn watch` for keep the tests executing on each change.
+
+## License
+
+MIT
