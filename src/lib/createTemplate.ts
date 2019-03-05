@@ -32,9 +32,9 @@ export function createTemplate(kataName: string, options: any) {
 
   console.log(chalk.yellow('Scaffolding kata structure...'))
   mkdir('-p', kataName)
-  cp('-R', `/${templatePath}/*`, kataPath)
+  cp('-Rf', `/${templatePath}/*`, kataPath)
   cd(kataPath)
-  sed('-i', 'name', kataName, 'package.json')
+  sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
   exec('yarn')
   console.log(chalk.green(`\nKata correctly scaffolded!\n`))
