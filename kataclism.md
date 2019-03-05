@@ -7,15 +7,29 @@
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
 
 # 🥋⛩️ Kataclism
+This project aims to facilitate the life of all the TDD disciples and kata practicioners working with `JavaScript` or `TypeScript`.
+As we know, in order to do a kata we need to setup always the same boring stuff, like `test`and `src` directories; moreover, we need to setup all the tooling that nowadays we need as JavaScript developers (babel, prettierc etc).
+I created this package exactly for this reason: *reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata*.
 
-<img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
+# How does it works?
+There are two ways for taking advantage of `kataclism`:
 
+## Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
+Calling `kataclism` with the action `create` followed by the name of the project you want to start, will let `kataclism` bootstrap all the directories and dependecies structures.
 
+### Want to work with TypeScript?
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-ts.png" />
+Just add `-t` option to bootstrap the project with `TypeScript`.
 
-## Directories:
 
+## Choose one of the default katas:
+<img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
+Running `kataclism` without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you wanted to practice.
+By default, will be generated a `README` with all the instructions needed for practicing the kata you choosed.
+
+#### Folder Structure:
+The following is the structure generated for the `JavaScript` template:
 ```
 |--src
    |---index.js
@@ -23,16 +37,17 @@
    |---index.test.js
 |--package.json
 |--README.MD
-|--.babelrc
-|--.prettierrc
+```
+This one for `TypeScript`:
+```
+|--src
+   |---index.ts
+|--test
+   |---index.test.ts
+|--package.json
+|--tsconfig.json
+|--README.MD
 ```
 
-## DevDependencies:
-
-- jest
-- babel
-- prettier
-
-### Scripts:
-
-`npm run test` will execute jest.
+##### How to run the tests?
+Just execute `yarn test`, if you want to run the tests once, or `yarn watch` for keep the tests executing on each change.
