@@ -22,7 +22,7 @@ export function createTemplate(kataName: string, options: any) {
   if (test('-d', kataPath)) {
     console.error(`\n`)
     console.error(
-      chalk.red(`Can't create kata project wiht name: ${kataName}.`)
+      chalk.red(`Can't create kata project with name: ${kataName}.`)
     )
     console.error(`\n`)
     console.error(chalk.red(`The directory '${kataName}' already exist.`))
@@ -32,9 +32,9 @@ export function createTemplate(kataName: string, options: any) {
 
   console.log(chalk.yellow('Scaffolding kata structure...'))
   mkdir('-p', kataName)
-  cp('-R', `/${templatePath}/*`, kataPath)
+  cp('-Rf', `/${templatePath}/*`, kataPath)
   cd(kataPath)
-  sed('-i', 'name', kataName, 'package.json')
+  sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
   exec('yarn')
   console.log(chalk.green(`\nKata correctly scaffolded!\n`))
