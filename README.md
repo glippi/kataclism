@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/glippi/kataclism/blob/master/kataclysm.svg" width="700"/>
+   <img src="https://github.com/glippi/kataclism/blob/master/kataclism.svg" width="700"/>
 </p>
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
