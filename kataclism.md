@@ -16,17 +16,20 @@ There are two ways for taking advantage of `kataclism`:
 
 ## 1. Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
-Calling `kataclism` with the action `create` followed by the name of the project you want to start, will let `kataclism` bootstrap all the directories and dependecies structures.
+
+Calling kataclism with the action `create` followed by the name of the project you want to start, will let kataclism bootstrap all the directories and dependecies structures.
 
 ### Want to work with TypeScript?
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-ts.png" />
-Just add `-t` option to bootstrap the project with `TypeScript`.
+
+Just add `-t` option to bootstrap the project with TypeScript.
 
 
 ## 2. Choose one of the default katas:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
-Running `kataclism` without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you wanted to practice.
-By default, will be generated a `README` with all the instructions needed for practicing the kata you choosed.
+
+Running kataclism without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you want to practice.
+By default, kataclism will generated a `README` with all the instructions needed for practicing the kata you choosed.
 
 #### Folder Structure:
 The following is the structure generated for the `JavaScript` template:
