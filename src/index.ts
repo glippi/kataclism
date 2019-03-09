@@ -28,6 +28,12 @@ if (isCustomKata) {
         message: 'Select the kata you want to practice',
         choices: allKatas,
       },
+      {
+        type: 'list',
+        name: 'language',
+        message: 'Select the language',
+        choices: ['javascript', 'typescript'],
+      },
     ])
     .then((answers: Answers) => {
       console.info('Answer:', answers.kata)
