@@ -9,23 +9,36 @@
 # 🥋⛩️ Kataclism
 This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners** working with `JavaScript` or `TypeScript`.
 As we know, in order to do a kata we need to setup always the same boring stuff, like `test`and `src` directories; moreover, we need to setup all the tooling that nowadays we need as JavaScript developers (babel, prettierc etc).
-I created this package exactly for this reason: **reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata**..
+I created this package exactly for this reason: **reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata**.
 
-# How does it works?
+# Usage
+To install kataclism run:
+
+```console
+npm install -g kataclism
+```
+
+or if you want to use it without have to installing it:
+
+```console
+npx kataclism create <name-of-kata> [programming-language]
+```
+
+## How does it works?
 There are two ways for taking advantage of `kataclism`:
 
-## 1. Create a new empty project:
+### 1. Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
 
 Calling kataclism with the action `create` followed by the name of the project you want to start, will let kataclism bootstrap all the directories and dependecies structures.
 
-### Want to work with TypeScript?
+#### Want to work with TypeScript?
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-ts.png" />
 
 Just add `-t` option to bootstrap the project with TypeScript.
 
 
-## 2. Choose one of the default katas:
+### 2. Choose one of the default katas:
 <img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
 
 Running kataclism without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you want to practice.
@@ -57,10 +70,10 @@ This one for `TypeScript`:
 ##### How to run the tests?
 Just execute `yarn test`, if you want to run the tests once, or `yarn watch` for keep the tests executing on each change.
 
-#### What is a code kata?
+##### What is a code kata?
 For more info about the *what* and *why* behind code katas, check out [this article](http://codekata.com/); and for a bit of story behind them [this one](http://codekata.com/kata/codekata-how-it-started/).
 
-#### Where can I find code katas?
+##### Where can I find code katas?
 Check out these resources:
    * [awesome-katas](https://github.com/gamontal/awesome-katas)
    * [CodeKata](http://codekata.com/)
