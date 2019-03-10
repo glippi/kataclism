@@ -30,14 +30,16 @@ export function createTemplate(kataName: string, options: {} = {}) {
     process.exit(1)
   }
 
-  console.log(chalk.yellow('Scaffolding kata structure...'))
+  console.log(chalk.yellow('Generating kata...'))
   mkdir('-p', kataName)
   cp('-Rf', `/${templatePath}/*`, kataPath)
   cd(kataPath)
   sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
   exec('yarn')
-  console.log(chalk.green(`\nKata correctly scaffolded!\n`))
-  console.log(chalk.green(`You can enter the new created directory typing:\n`))
-  console.log(chalk.cyan(`\tcd ${kataName}\n\n`))
+  console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
+  console.log(chalk.green(`Start the kata by typing:\n`))
+  console.log(chalk.cyan(`\tcd ${kataName}`))
+  console.log(chalk.cyan(`\tyarn test\n`))
+  console.log(chalk.green(`Happy hacking!`))
 }
