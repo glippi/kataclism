@@ -1,5 +1,6 @@
-Tic Tac Toe rules:
+# Tic Tac Toe 
 
+## rules:
 X always goes first.
 
 Players cannot play on a played position
