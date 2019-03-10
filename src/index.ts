@@ -36,7 +36,6 @@ if (isCustomKata) {
       },
     ])
     .then((answers: Answers) => {
-      console.info('Answer:', answers.kata)
       chooseKata(answers)
     })
 }
