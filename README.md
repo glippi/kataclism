@@ -5,7 +5,7 @@
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
-[![version](https://img.shields.io/npm/v/react-testing-library.svg?style=flat-square)](https://www.npmjs.com/package/kataclism) 
+[![version](https://img.shields.io/npm/v/kataclism.svg?style=flat-square)](https://www.npmjs.com/package/kataclism) 
 [![MIT License](https://img.shields.io/npm/l/react-testing-library.svg?style=flat-square)](https://github.com/kentcdodds/react-testing-library/blob/master/LICENSE)
 
 # 🥋⛩️ Kataclism
