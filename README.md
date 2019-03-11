@@ -5,16 +5,8 @@
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
-
-[![version][version-badge]][package] 
-
-[![downloads][downloads-badge]][npmtrends]
-
-[![MIT License][license-badge]][license]
-[npm]: https://www.npmjs.com/
-[downloads-badge]: https://img.shields.io/npm/dm/react-testing-library.svg?style=flat-square
-[license-badge]: https://img.shields.io/npm/l/react-testing-library.svg?style=flat-square
-[license]: https://github.com/kentcdodds/react-testing-library/blob/master/LICENSE
+[![version][ https://img.shields.io/npm/v/react-testing-library.svg?style=flat-square][https://www.npmjs.com/package/kataclism] 
+[![MIT License][https://img.shields.io/npm/l/react-testing-library.svg?style=flat-square]][https://github.com/kentcdodds/react-testing-library/blob/master/LICENSE]
 
 # 🥋⛩️ Kataclism
 This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners** working with `JavaScript` or `TypeScript`.
