@@ -26,7 +26,7 @@ export function createTemplate(
     `${__dirname}/src/resources/katas/${kataName}.md`
   )
   const kataDescriptionOrEmptyString = kataDescription
-    ? kataDescriptionReadMe
+    ? cat(kataDescriptionReadMe)
     : ''
 
   if (test('-d', kataPath)) {
@@ -46,7 +46,7 @@ export function createTemplate(
   cd(kataPath)
   sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
-  sed('-i', '{{DESCRIPTION}}', cat(kataDescriptionOrEmptyString), 'README.md')
+  sed('-i', '{{DESCRIPTION}}', kataDescriptionOrEmptyString, 'README.md')
   exec('yarn')
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
