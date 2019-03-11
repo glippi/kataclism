@@ -4,5 +4,6 @@ import { createTemplate } from './createTemplate'
 export function chooseKata(answers: Answers) {
   const { kata, language } = answers
   const formatLanguageOption = language === 'javascript' ? {} : { t: true }
-  createTemplate(kata, formatLanguageOption)
+  const needKataDescription = true
+  createTemplate(kata, formatLanguageOption, needKataDescription)
 }

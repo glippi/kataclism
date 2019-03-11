@@ -1,9 +1,9 @@
 # 🥋⛩️  {{APP_TITLE}}
 
-This project was bootstrapped with [Kataclism](https://github.com/glippi/kataclism).
+{{DESCRIPTION}}
 
 ## Usage
-For execute the tests, just run:
+Run the tests with:
 - `yarn test` => if you want ro run the tests only once
 - `yarn watch` => if you want ro keep test refreshing as you code
 
@@ -14,9 +14,10 @@ For execute the tests, just run:
 |--test
    |---index.test.js
 |--package.json
-|--README.MD
-|--.babelrc
-|--.prettierrc
+|--README.md
+|--LICENSE
 ```
+
+This project was bootstrapped with [kataclism](https://github.com/glippi/kataclism).
 
 [Read the rest of the documentation here.](https://github.com/glippi/kataclism)

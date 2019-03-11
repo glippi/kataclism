@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
+import { exec, sed, mkdir, cd, cp, test, cat } from 'shelljs'
 import chalk from 'chalk'
 
 function exitBuildDirectory(path: string): string {
@@ -16,8 +16,18 @@ export function setupVariablesName(kataName: string, options: { t?: boolean }) {
   return { templatePath, kataPath }
 }
 
-export function createTemplate(kataName: string, options: {} = {}) {
+export function createTemplate(
+  kataName: string,
+  options: {} = {},
+  kataDescription = false
+) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
+  const kataDescriptionReadMe = exitBuildDirectory(
+    `${__dirname}/src/resources/katas/${kataName}.md`
+  )
+  const kataDescriptionOrEmptyString = kataDescription
+    ? cat(kataDescriptionReadMe)
+    : ''
 
   if (test('-d', kataPath)) {
     console.error(`\n`)
@@ -36,6 +46,7 @@ export function createTemplate(kataName: string, options: {} = {}) {
   cd(kataPath)
   sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
+  sed('-i', '{{DESCRIPTION}}', kataDescriptionOrEmptyString, 'README.md')
   exec('yarn')
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
