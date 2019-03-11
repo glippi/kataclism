@@ -1,5 +1,3 @@
-# Tic Tac Toe 
-
 ## rules:
 X always goes first.
 
