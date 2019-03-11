@@ -5,7 +5,8 @@
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
-
+[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
+[![MIT License][license-badge]][license]
 # 🥋⛩️ Kataclism
 This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners** working with `JavaScript` or `TypeScript`.
 As we know, in order to do a kata we need to setup always the same boring stuff, like `test`and `src` directories; moreover, we need to setup all the tooling that nowadays we need as JavaScript developers (babel, prettierc etc).
