@@ -14,7 +14,7 @@ Run the tests with:
 |--test
    |---index.test.js
 |--package.json
-|--README.MD
+|--README.md
 |--LICENSE
 ```
 
