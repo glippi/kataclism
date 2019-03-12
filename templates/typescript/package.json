@@ -28,7 +28,7 @@
     "semi": false,
     "singleQuote": true
   },
-  "devDependencies": {
+  "dependencies": {
     "@types/jest": "^24.0.3",
     "@types/typescript": "^2.0.0",
     "jest": "^24.1.0",
