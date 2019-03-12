@@ -67,7 +67,6 @@
     "@types/jest-diff": "^20.0.1",
     "@types/node": "^11.9.4",
     "@types/shelljs": "^0.8.3",
-    "@types/typescript": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",
     "eslint": "^5.15.1",
