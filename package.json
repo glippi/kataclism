@@ -22,7 +22,8 @@
     "build": "tsc -p .",
     "test": "jest",
     "watch": "jest --watchAll",
-    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\""
+    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
+    "publish": "build && npm publish"
   },
   "jest": {
     "roots": [
