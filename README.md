@@ -5,7 +5,7 @@
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
 [![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
-[![version](https://img.shields.io/npm/v/kataclism.svg?style=flat-square)](https://www.npmjs.com/package/kataclism) 
+[![version](https://img.shields.io/npm/v/kataclism.svg?style=flat-square)](https://www.npmjs.com/package/kataclism)
 [![MIT License](https://img.shields.io/npm/l/react-testing-library.svg?style=flat-square)](https://github.com/kentcdodds/react-testing-library/blob/master/LICENSE)
 
 # 🥋⛩️ Kataclism
@@ -18,12 +18,6 @@ To install kataclism run:
 
 ```console
 npm install -g kataclism
-```
-
-or if you want to use it without have to installing it:
-
-```console
-npx kataclism create <name-of-kata> [programming-language]
 ```
 
 ## How does it works?
