@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import { createTemplate } from './lib/createTemplate'
 import { chooseKata } from './lib/chooseKata'
-import inquirer from 'inquirer'
-import { Answers } from 'inquirer'
-import { getKatasList } from './resources/katas/getKatasList'
+import { getKatasList } from './lib/getKatasList'
+import inquirer, { Answers } from 'inquirer'
 import cac from 'cac'
 
 const cli = cac()

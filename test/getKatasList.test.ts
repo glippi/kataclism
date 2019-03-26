@@ -1,16 +1,11 @@
-import {
-  getKatasList,
-  extractFileName,
-} from '../src/resources/katas/getKatasList'
+import { getKatasList, extractFileName } from '../src/lib/getKatasList'
 
-test('it should returns the list of all available katas in the directory', () => {
+test('it should check for the existence of at least one kata', () => {
   const katas = getKatasList()
   expect(katas.length).toBeGreaterThan(0)
 })
 
 test('it should extract the name of the markdown file', () => {
-  const markdownFileName = extractFileName(
-    './src/resources/katas/bowling-kata.md'
-  )
+  const markdownFileName = extractFileName('./src/katasReadme/bowling-kata.md')
   expect(markdownFileName).toBe('bowling-kata')
 })

@@ -1,7 +1,7 @@
 import { ls } from 'shelljs'
 
 function exitBuildDirectory(path: string): string {
-  return path.replace('lib/', 'src/')
+  return path.replace('/lib', '')
 }
 
 export function extractFileName(path: string): string {
@@ -12,8 +12,8 @@ export function extractFileName(path: string): string {
 
 export function getKatasList() {
   let katas: string[] = []
-  const kataclismDirectory = exitBuildDirectory(__dirname)
-  ls(`${kataclismDirectory}/*.md`).forEach(file => {
+  const kataclismDirectory = exitBuildDirectory(`${__dirname}`)
+  ls(`${kataclismDirectory}/katasReadme/*.md`).forEach(file => {
     katas.push(file)
   })
   const allKatas = katas.map((file: string) => extractFileName(file))

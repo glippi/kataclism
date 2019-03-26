@@ -22,8 +22,9 @@ export function createTemplate(
   kataDescription = false
 ) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
+
   const kataDescriptionReadMe = exitBuildDirectory(
-    `${__dirname}/src/resources/katas/${kataName}.md`
+    `${__dirname}/src/katasReadme/${kataName}.md`
   )
   const kataDescriptionOrEmptyString = kataDescription
     ? cat(kataDescriptionReadMe)
