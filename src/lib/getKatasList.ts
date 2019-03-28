@@ -1,7 +1,7 @@
 import { ls } from 'shelljs'
 
 function exitBuildDirectory(path: string): string {
-  return path.replace('/lib', '')
+  return path.replace('lib/lib', 'src/')
 }
 
 export function extractFileName(path: string): string {
