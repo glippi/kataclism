@@ -1,18 +1,12 @@
-#!/usr/bin/env node
 import { exec, sed, mkdir, cd, cp, test, cat } from 'shelljs'
 import chalk from 'chalk'
 
-function exitBuildDirectory(path: string): string {
-  return path.replace('lib/lib/', '')
-}
+const kataclismDirectory = process.cwd()
 
 export function setupVariablesName(kataName: string, options: { t?: boolean }) {
   const templateType = options.t ? 'typescript' : 'javascript'
-  const localPath = process.cwd()
-  const templatePath = exitBuildDirectory(
-    `${__dirname}/templates/${templateType}`
-  )
-  const kataPath = exitBuildDirectory(`${localPath}/${kataName}`)
+  const templatePath = `${kataclismDirectory}/templates/${templateType}`
+  const kataPath = `${kataclismDirectory}/${kataName}`
   return { templatePath, kataPath }
 }
 
@@ -23,9 +17,8 @@ export function createTemplate(
 ) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
 
-  const kataDescriptionReadMe = exitBuildDirectory(
-    `${__dirname}/src/katasReadme/${kataName}.md`
-  )
+  const kataDescriptionReadMe = `${kataclismDirectory}/src/katasReadme/${kataName}.md`
+
   const kataDescriptionOrEmptyString = kataDescription
     ? cat(kataDescriptionReadMe)
     : ''
