@@ -21,7 +21,7 @@ npm install -g kataclism
 ```
 
 ## How does it works?
-There are two ways for taking advantage of `kataclism`:
+There are two ways of using `kataclism`:
 
 ### 1. Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-js.png" />
