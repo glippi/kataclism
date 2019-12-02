@@ -18,7 +18,7 @@
   "bin": {
     "kataclism": "lib/index.js"
   },
- "files": [
+  "files": [
     "/lib"
   ],
   "scripts": {
