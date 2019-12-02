@@ -22,7 +22,7 @@
     "/lib"
   ],
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc",
     "test:once": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
