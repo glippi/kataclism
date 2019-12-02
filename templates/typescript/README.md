@@ -1,11 +1,11 @@
-# 🥋⛩️  {{APP_TITLE}}
+# 🥋⛩️  {{app_title}}
 
-{{DESCRIPTION}}
+{{description}}
 
 ## Usage
 Run the tests with:
-- `yarn test` => if you want ro run the tests only once
-- `yarn watch` => if you want ro keep test refreshing as you code
+- `npm run test:once` => if you want ro run the tests only once
+- `npm run test:watch` => if you want ro keep test refreshing as you code
 
 ## Directories:
 ```
