@@ -9,12 +9,12 @@
 [![MIT License](https://img.shields.io/npm/l/kataclism.svg?style=flat-square)](https://github.com/glippi/kataclism/blob/master/LICENSE)
 
 # 🥋⛩️ Kataclism
-This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners** working with `JavaScript` or `TypeScript`.
+This project aims to facilitate the life of all the **TDD disciples** and **kata practicioners**, wihch works with `JavaScript` or `TypeScript`.
 As we know, in order to do a kata we need to setup always the same boring stuff, like `test`and `src` directories; moreover, we need to setup all the tooling that nowadays we need as JavaScript developers (babel, prettierc etc).
-I created this package exactly for this reason: **reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata**.
+I created this package to **reduce the time spent on bootstrapping the kata structure, and let the developer starts immediately to work on the kata**.
 
 # Usage
-To install kataclism run:
+To globally install kataclism run:
 
 ```console
 npm install -g kataclism
@@ -26,22 +26,22 @@ There are two ways of using `kataclism`:
 ### 1. Create a new empty project:
 <img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-js.png" />
 
-Calling kataclism with the action `create` followed by the name of the project you want to start, will let kataclism bootstrap all the directories and dependecies structures.
+Call kataclism with the argument `create` followed by the name of the project you want to start and kataclism will bootstrap the project.
 
 #### Want to work with TypeScript?
 <img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-ts.png" />
 
-Just add `-t` option to bootstrap the project with TypeScript.
+Add `-t` option to bootstrap the project with TypeScript.
 
 
 ### 2. Choose one of the default katas:
 <img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-inquirer.png" />
 
-Running kataclism without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you want to practice.
+Run kataclism without arguments and kataclism will prompt you with a list of some of the most used katas; navigate the list with the arrow keys, and select the kata you want to practice with enter.
 By default, kataclism will generated a `README` with all the instructions needed for practicing the kata you choosed.
 
 #### Folder Structure:
-The following is the structure generated for the `JavaScript` template:
+The following structure generated is for the `JavaScript` template:
 ```
 |--src
    |---index.js
@@ -50,7 +50,7 @@ The following is the structure generated for the `JavaScript` template:
 |--package.json
 |--README.MD
 ```
-This one for `TypeScript`:
+and this for `TypeScript`:
 ```
 |--src
    |---index.ts
@@ -63,14 +63,14 @@ This one for `TypeScript`:
 
 ## FAQ
 
-##### How to run the tests?
-Just execute `npm run test:once`, if you want to run the tests once, or `npm run test:watch` for keep the tests executing on each change.
+##### How to run tests?
+Execute `npm run test:once`, to run the tests once, or `npm run test:watch` to keep the tests executing on each change.
 
-##### What is a code kata?
-For more info about the *what* and *why* behind code katas, check out [this article](http://codekata.com/); and for a bit of story behind them [this one](http://codekata.com/kata/codekata-how-it-started/).
+##### What are katas?
+For more info about the *what* and the *why* behind katas, please check out [this article](http://codekata.com/); and if you're courious about the history behind them [this one too](http://codekata.com/kata/codekata-how-it-started/).
 
-##### Where can I find code katas?
-Check out these resources:
+##### Where can I find katas?
+Have a look to these resources:
    * [awesome-katas](https://github.com/gamontal/awesome-katas)
    * [CodeKata](http://codekata.com/)
    * [Coding Dojo](http://codingdojo.org/kata/)
