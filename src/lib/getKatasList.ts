@@ -1,17 +1,11 @@
-import { ls } from 'shelljs'
+import { KATACLISM_ROOT_DIRECTORY } from './createTemplate'
+import fs from 'fs'
+import path from 'path'
 
-export function extractFileName(path: string): string {
-  const fileName = path.replace(/^.+\//, '')
-  const fileNameWithoutExtension = fileName.replace(/\.md/, '')
-  return fileNameWithoutExtension
-}
+const FILE_EXTENSION = '.md'
 
-export function getKatasList() {
-  let katas: string[] = []
-  const kataclismDirectory = process.cwd()
-  ls(`${kataclismDirectory}/src/katasReadme/*.md`).forEach(file => {
-    katas.push(file)
-  })
-  const allKatas = katas.map((file: string) => extractFileName(file))
-  return allKatas
+export function getKatasList(): string[] {
+  return fs
+    .readdirSync(`${KATACLISM_ROOT_DIRECTORY}src/katasReadme`)
+    .map((filename: string) => path.basename(filename, FILE_EXTENSION))
 }
