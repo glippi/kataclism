@@ -1,13 +1,14 @@
 import { exec, sed, mkdir, cd, cp, test, cat } from 'shelljs'
 import chalk from 'chalk'
+import path from 'path'
 
-const kataclismDirectory = process.cwd()
+export const KATACLISM_ROOT_DIRECTORY = path.join(__dirname, '../../')
 
 export function setupVariablesName(kataName: string, options: { t?: boolean }) {
   const templateType = options.t ? 'typescript' : 'javascript'
-  const templatePath = `${kataclismDirectory}/templates/${templateType}`
-  const kataPath = `${kataclismDirectory}/${kataName}`
-  return { templatePath, kataPath }
+  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
+  const kataPath = `${KATACLISM_ROOT_DIRECTORY}${kataName}`
+  return { kataPath, templatePath }
 }
 
 export function createTemplate(
@@ -17,7 +18,7 @@ export function createTemplate(
 ) {
   const { templatePath, kataPath } = setupVariablesName(kataName, options)
 
-  const kataDescriptionReadMe = `${kataclismDirectory}/src/katasReadme/${kataName}.md`
+  const kataDescriptionReadMe = `${KATACLISM_ROOT_DIRECTORY}src/katasReadme/${kataName}.md`
 
   const kataDescriptionOrEmptyString = kataDescription
     ? cat(kataDescriptionReadMe)
