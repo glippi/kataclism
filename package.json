@@ -18,6 +18,9 @@
   "bin": {
     "kataclism": "lib/index.js"
   },
+ "files": [
+    "/lib"
+  ],
   "scripts": {
     "build": "tsc -p .",
     "test": "jest",
