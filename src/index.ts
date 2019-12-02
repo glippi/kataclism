@@ -2,7 +2,7 @@
 import { createTemplate } from './lib/createTemplate'
 import { chooseKata } from './lib/chooseKata'
 import { getKatasList } from './lib/getKatasList'
-import inquirer, { Answers } from 'inquirer'
+import inquirer from 'inquirer'
 import cac from 'cac'
 
 const cli = cac()
@@ -34,7 +34,7 @@ if (isCustomKata) {
         choices: ['javascript', 'typescript'],
       },
     ])
-    .then((answers: Answers) => {
+    .then((answers: any) => {
       chooseKata(answers)
     })
 }
