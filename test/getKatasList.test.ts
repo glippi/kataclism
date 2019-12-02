@@ -1,11 +1,20 @@
-import { getKatasList, extractFileName } from '../src/lib/getKatasList'
+import { getKatasList } from '../src/lib/getKatasList'
 
-test('it should check for the existence of at least one kata', () => {
-  const katas = getKatasList()
-  expect(katas.length).toBeGreaterThan(0)
-})
-
-test('it should extract the name of the markdown file', () => {
-  const markdownFileName = extractFileName('./src/katasReadme/bowling-kata.md')
-  expect(markdownFileName).toBe('bowling-kata')
+it('should verify the list of all available katas', () => {
+  const expectedKataList = getKatasList()
+  const actual = [
+    'bank-kata',
+    'bowling-kata',
+    'fizz_buzz-kata',
+    'game_of_life-kata',
+    'leap_years-kata',
+    'mars_rover-kata',
+    'roman_numerals-kata',
+    'shopping_basket-kata',
+    'social_networking-kata',
+    'string_calculator-kata',
+    'tennis_refactoring-kata',
+    'tic_tac_toe-kata',
+  ]
+  expect(expectedKataList).toEqual(actual)
 })
