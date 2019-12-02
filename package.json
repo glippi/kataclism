@@ -23,8 +23,9 @@
   ],
   "scripts": {
     "build": "tsc -p .",
-    "test": "jest",
-    "watch": "jest --watchAll",
+    "test:once": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
     "publish": "build && npm publish"
   },
