@@ -4,7 +4,7 @@
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
 
-[![Build Status](https://travis-ci.com/glippi/kataclism.svg?branch=master)](https://travis-ci.com/glippi/kataclism)
+[![CircleCI](https://circleci.com/gh/glippi/kataclism.svg?style=svg)](https://circleci.com/gh/glippi/kataclism)
 [![version](https://img.shields.io/npm/v/kataclism.svg?style=flat-square)](https://www.npmjs.com/package/kataclism)
 [![MIT License](https://img.shields.io/npm/l/kataclism.svg?style=flat-square)](https://github.com/glippi/kataclism/blob/master/LICENSE)
 
