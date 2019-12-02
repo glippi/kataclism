@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/glippi/kataclism/blob/master/kataclism.svg" width="700"/>
+   <img src="https://github.com/glippi/kataclism/blob/master/images/kataclism.svg" width="700"/>
 </p>
 
 > A violent upheaval that causes your terminal to scaffold an entire new kata
@@ -24,18 +24,18 @@ npm install -g kataclism
 There are two ways for taking advantage of `kataclism`:
 
 ### 1. Create a new empty project:
-<img src="https://github.com/glippi/kataclism/blob/master/kataclism-js.png" />
+<img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-js.png" />
 
 Calling kataclism with the action `create` followed by the name of the project you want to start, will let kataclism bootstrap all the directories and dependecies structures.
 
 #### Want to work with TypeScript?
-<img src="https://github.com/glippi/kataclism/blob/master/kataclism-ts.png" />
+<img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-ts.png" />
 
 Just add `-t` option to bootstrap the project with TypeScript.
 
 
 ### 2. Choose one of the default katas:
-<img src="https://github.com/glippi/kataclism/blob/master/kataclism-inquirer.png" />
+<img src="https://github.com/glippi/kataclism/blob/master/images/kataclism-inquirer.png" />
 
 Running kataclism without any arguments will let kataclism prompt you with a list of the most relevant katas; just navigate the list with the arrow keys, and select with enter the kata you want to practice.
 By default, kataclism will generated a `README` with all the instructions needed for practicing the kata you choosed.
@@ -64,7 +64,7 @@ This one for `TypeScript`:
 ## FAQ
 
 ##### How to run the tests?
-Just execute `yarn test`, if you want to run the tests once, or `yarn watch` for keep the tests executing on each change.
+Just execute `npm run test:once`, if you want to run the tests once, or `npm run test:watch` for keep the tests executing on each change.
 
 ##### What is a code kata?
 For more info about the *what* and *why* behind code katas, check out [this article](http://codekata.com/); and for a bit of story behind them [this one](http://codekata.com/kata/codekata-how-it-started/).
