@@ -35,17 +35,17 @@ export function createTemplate(
     process.exit(1)
   }
 
-  console.log(chalk.yellow('Generating kata...'))
+  console.log(chalk.yellow('Generating kata folders...'))
   mkdir('-p', kataName)
   cp('-Rf', `/${templatePath}/*`, kataPath)
   cd(kataPath)
-  sed('-i', /("name":)(\s)("APP_TITLE")/, `$1 "${kataName}"`, 'package.json')
-  sed('-i', '{{APP_TITLE}}', kataName, 'README.md')
-  sed('-i', '{{DESCRIPTION}}', kataDescriptionOrEmptyString, 'README.md')
-  exec('yarn')
+  sed('-i', /("name":)(\s)("app_title")/, `$1 "${kataName}"`, 'package.json')
+  sed('-i', '{{app_title}}', kataName, 'README.md')
+  sed('-i', '{{description}}', kataDescriptionOrEmptyString, 'README.md')
+  exec('npm install')
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
   console.log(chalk.cyan(`\tcd ${kataName}`))
-  console.log(chalk.cyan(`\tyarn test\n`))
+  console.log(chalk.cyan(`\tnpm run test:watch\n`))
   console.log(chalk.green(`Happy hacking!`))
 }
