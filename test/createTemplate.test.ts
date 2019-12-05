@@ -1,25 +1,15 @@
 import { cat, exec, ls, rm } from 'shelljs'
-import { setupVariablesName } from '../src/lib/createTemplate'
 
-const KATACLISM = 'node lib/index.js'
+const KATACLISM = 'node dist/index.js'
 const KATA = 'bowling-kata'
 
 beforeAll(() => {
-  exec(`${KATACLISM} create ${KATA}`)
+  exec(`npm run build && ${KATACLISM} create ${KATA}`)
 })
 
 afterAll(() => {
   rm('-rf', KATA)
-})
-
-test('Expect the template to be JavaScript', () => {
-  const { templatePath } = setupVariablesName(KATA, {})
-  expect(templatePath).toMatch(new RegExp('javascript'))
-})
-
-test('Expect the template to be TypeScript', () => {
-  const { templatePath } = setupVariablesName(KATA, { t: true })
-  expect(templatePath).toMatch(new RegExp('typescript'))
+  rm('-rf', 'dist')
 })
 
 test('Create a directory with the name of the kata', () => {
