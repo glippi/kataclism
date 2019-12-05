@@ -14,12 +14,13 @@
   },
   "license": "MIT",
   "author": "Gabriele Lippi",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "kataclism": "lib/index.js"
+    "kataclism": "dist/index.js"
   },
   "files": [
-    "/lib"
+    "/dist",
+    "templates/**/*"
   ],
   "scripts": {
     "build": "tsc",
