@@ -1,9 +1,7 @@
 import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
 import chalk from 'chalk'
-import path from 'path'
 import { getKataDescription } from './getKatasList'
-
-export const KATACLISM_ROOT_DIRECTORY = path.join(__dirname, '../../')
+import { KATACLISM_ROOT_DIRECTORY } from '../constants'
 
 export function createTemplate(
   kataName: string,

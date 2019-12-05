@@ -1,6 +1,6 @@
 coverage/
 jspm_packages/
-lib
+dist/
 node_modules/
 typings/
 
