@@ -1,6 +1,4 @@
 import { KATACLISM_ROOT_DIRECTORY } from './createTemplate'
-import fs from 'fs'
-import path from 'path'
 import { Kata, katasReadme } from './katasReadme'
 
 export function getKatasTitle(): string[] {
