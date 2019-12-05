@@ -1,11 +1,12 @@
 import { KATACLISM_ROOT_DIRECTORY } from './createTemplate'
 import fs from 'fs'
 import path from 'path'
+import { Kata, katasReadme } from './katasReadme'
 
-const FILE_EXTENSION = '.md'
+export function getKatasTitle(): string[] {
+  return katasReadme.map((k: Kata) => k.title)
+}
 
-export function getKatasList(): string[] {
-  return fs
-    .readdirSync(`${KATACLISM_ROOT_DIRECTORY}src/katasReadme`)
-    .map((filename: string) => path.basename(filename, FILE_EXTENSION))
+export function getKataDescription(title: string): string {
+  return katasReadme.filter((k: Kata) => k.title === title)[0].description
 }
