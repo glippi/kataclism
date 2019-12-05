@@ -1,27 +1,21 @@
-import { exec, sed, mkdir, cd, cp, test, cat } from 'shelljs'
+import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
 import chalk from 'chalk'
 import path from 'path'
+import { getKataDescription } from './getKatasList'
 
 export const KATACLISM_ROOT_DIRECTORY = path.join(__dirname, '../../')
 
-export function setupVariablesName(kataName: string, options: { t?: boolean }) {
-  const templateType = options.t ? 'typescript' : 'javascript'
-  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
-  const kataPath = `${KATACLISM_ROOT_DIRECTORY}${kataName}`
-  return { kataPath, templatePath }
-}
-
 export function createTemplate(
   kataName: string,
-  options: {} = {},
+  options: { t?: undefined } | { t: boolean },
   kataDescription = false
 ) {
-  const { templatePath, kataPath } = setupVariablesName(kataName, options)
-
-  const kataDescriptionReadMe = `${KATACLISM_ROOT_DIRECTORY}src/katasReadme/${kataName}.md`
+  const templateType = options.t ? 'typescript' : 'javascript'
+  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
+  const kataPath = `${process.cwd()}/${kataName}`
 
   const kataDescriptionOrEmptyString = kataDescription
-    ? cat(kataDescriptionReadMe)
+    ? getKataDescription(kataName)
     : ''
 
   if (test('-d', kataPath)) {
