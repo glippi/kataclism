@@ -11,7 +11,6 @@ export function createTemplate(
   const templateType = options.t ? 'typescript' : 'javascript'
   const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
   const kataPath = `${process.cwd()}/${kataName}`
-
   const kataDescriptionOrEmptyString = kataDescription
     ? getKataDescription(kataName)
     : ''
@@ -34,6 +33,13 @@ export function createTemplate(
   sed('-i', /("name":)(\s)("app_title")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{app_title}}', kataName, 'README.md')
   sed('-i', '{{description}}', kataDescriptionOrEmptyString, 'README.md')
+  exec(
+    `git init && ${
+      templateType === 'javascript'
+        ? 'echo node_modules/ > .gitignore'
+        : 'echo node_modules/ > .gitignore && echo dist/ >> .gitignore'
+    }`
+  )
   exec('npm install')
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
