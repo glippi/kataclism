@@ -12,6 +12,7 @@ it('should verify the list of all available katas', () => {
     'roman-numerals-kata',
     'string-calculator-kata',
     'tic-tac-toe-kata',
+    'christmas-tree',
   ]
   expect(expectedKataList).toEqual(actual)
 })
