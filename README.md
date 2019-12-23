@@ -74,7 +74,7 @@ Have a look to these resources:
    * [awesome-katas](https://github.com/gamontal/awesome-katas)
    * [CodeKata](http://codekata.com/)
    * [Coding Dojo](http://codingdojo.org/kata/)
-
+   * [Codurance's katalyst](https://katalyst.codurance.com/)
 
 ## License
 
