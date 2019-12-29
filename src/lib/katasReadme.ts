@@ -9,7 +9,7 @@ export const katasReadme = [
     id: 1,
     title: 'bank-kata',
     description: `
-  Think of your personal bank account experience When in doubt, go for the simplest solution.
+Think of your personal bank account experience When in doubt, go for the simplest solution.
 Requirements:
 
 - Deposit and Withdrawal
@@ -35,8 +35,7 @@ date || credit || debit || balance
     id: 2,
     title: 'bowling-kata',
     description: `
-    Write a program to score a game of Ten-Pin Bowling.
-
+Write a program to score a game of Ten-Pin Bowling.
 This online app can help you: [http://www.bowlinggenius.com/][http://www.bowlinggenius.com/]
 
 _Input_: string (described below) representing a bowling game
@@ -96,9 +95,14 @@ Total score == 167
     id: 3,
     title: 'fizz-buzz-kata',
     description: `
-    Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+Write a program that prints the numbers from 1 to 100, but if a number is a multiple of:
+    * 3, print \`fizz\` instead of 3
+    * 5, print \`buzz\` instead of 5
+    * 3 and 5, print \`fizzbuzz\`
 
 Sample output:
+
+\`\`\`
 1
 2
 Fizz
@@ -114,67 +118,74 @@ Fizz
 13
 14
 FizzBuzz
-16 17
+16
+17
 Fizz
 19
 Buzz
 ... etc up to 100
+\`\`\`
     `,
   },
   {
     id: 4,
     title: 'game-of-life-kata',
     description: `
-    In this finite version of Conway's Game of Life (here is an excerpt of the rules) ...
+Implement a finite version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 
-The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
+Here are the rules (courtesy of Wikipedia):
 
-    Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+The universe of the Game of Life is an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states: alive or dead. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent to it. At each step in time, the following transitions occur:
 
-    Any live cell with two or three live neighbours lives on to the next generation.
+  * Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+  * Any live cell with two or three live neighbours lives on to the next generation.
+  * Any live cell with more than three live neighbours dies, as if by overcrowding.
+  * Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
 
-    Any live cell with more than three live neighbours dies, as if by overcrowding.
+The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed—births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick (in other words, each generation is a pure function of the preceding one) 
 
-    Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+Your game should be constructed with initial state of a two-dimensional array of boolean values, and a single public method to move to the next generation:
 
-The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed—births and deaths occur simultaneously, and the discrete moment at which this happens is sometimes called a tick (in other words, each generation is a pure function of the preceding one)
-
-...implement your own method which will take the initial state as an NxM array of 0's (dead cell) and 1's (living cell) and return an equally sized array representing the next generation. Cells outside the array must be considered dead. Cells that would born out of the array boundaries should be ignored (universe never grows beyond the initial NxM grid).
-N.B.: for illustration purposes, 0 and 1 will be represented as ░ and ▓ blocks (PHP: basic black and white squares) respectively. You can take advantage of the 'htmlize' function to get a text representation of the universe:
-eg:
-
-\`\`\`javascript
-console.log(htmlize(cells))
+\`\`\`java
+public class GameOfLife {
+  public GameOfLife(boolean[][] board);
+  public void nextGen();
+}
 \`\`\`
 
+### Notes
+
+  * The dimensions of the array stay constant throughout the game - the 'universe' never grows.
+  * Cells outside the bounds of the array should be considered permanently dead (they never come to life).
+
+Credit: [Kata-Log](https://kata-log.rocks/game-of-life-kata)
     `,
   },
   {
     id: 5,
     title: 'leap-years-kata',
     description: `
-    Write a function that returns true or false depending on whether its input integer is a leap year or not.
-
+Write a function that returns true or false depending on whether its input integer is a leap year or not.
 The following rules determine if an integer is a leap year:
 
-- It is NOT a leap year if it is NOT divisible by 4.
-- It is a leap year if it is divisible by 4.
-- It is a leap year if it is divisible by 400.
-- It is NOT a leap year if it is divisible by 100 but NOT by 400.
+  * It is NOT a leap year if it is NOT divisible by 4.
+  * It is a leap year if it is divisible by 4.
+  * It is a leap year if it is divisible by 400.
+  * It is NOT a leap year if it is divisible by 100 but NOT by 400.
 
 For example:
 
-- 1997 is not a leap year (not divisible by 4)
-- 1996 is a leap year (divisible by 4)
-- 1600 is a leap year (divisible by 400)
-- 1800 is NOT a leap year (divisible by 4, divisible by 100, NOT divisible by 400)
+  * 1997 is not a leap year (not divisible by 4)
+  * 1996 is a leap year (divisible by 4)
+  * 1600 is a leap year (divisible by 400)
+  * 1800 is NOT a leap year (divisible by 4, divisible by 100, NOT divisible by 400)
     `,
   },
   {
     id: 6,
     title: 'mars-rover-kata',
     description: `
-    A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth. A rover's position and location is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 1, 1, N, which means the rover is in the bottom left corner and facing North. In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
+A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is curiously rectangular, must be navigated by the rovers so that their on-board cameras can get a complete view of the surrounding terrain to send back to Earth. A rover's position and location is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 1, 1, N, which means the rover is in the bottom left corner and facing North. In order to control a rover, NASA sends a simple string of letters. The possible letters are 'L', 'R' and 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its current spot. 'M' means move forward one grid point, and maintain the same heading.
 
 Assume that the square directly North from (x, y) is (x, y+1).
 
@@ -217,13 +228,14 @@ MMRMMRMRRM
     id: 7,
     title: 'roman-numerals-kata',
     description: `
-    Given a positive integer number lesser than 4000 (eg 42) determine its Roman numeral representation as a String (eg "XLII").
+Given a positive integer number lesser than 4000 (eg 42) determine its Roman numeral representation as a String (eg "XLII").
 
 You cannot write numerals like IM for 999. Wikipedia states "Modern Roman numerals are written by expressing each digit separately starting with the leftmost digit and skipping any digit with a value of zero."
 
 Examples:
 
-\`\`\`1 -> "I" | 10 -> "X" | 100 -> "C" | 1000 -> "M"
+\`\`\`
+1 -> "I" | 10 -> "X" | 100 -> "C" | 1000 -> "M"
 2 -> "II" | 20 -> "XX" | 200 -> "CC" | 2000 -> "MM"
 3 -> "III" | 30 -> "XXX" | 300 -> "CCC" | 3000 -> "MMM"
 4 -> "IV" | 40 -> "XL" | 400 -> "CD" |
@@ -236,30 +248,32 @@ Examples:
 2008 -> "MMVIII" (2000 -> "MM" + 8 -> "VIII")
 99 -> "XCIX" (90 -> "XC" + 9 -> "IX")
 47 -> "XLVII" (40 -> "XL" + 7 -> "VII")
-3888 -> "MMMDCCCLXXXVIII" (3000 -> "MMM" + 800 -> "DCCC" + 80 -> "LXXX" + 8 -> "VIII")\`\`\`
+3888 -> "MMMDCCCLXXXVIII" (3000 -> "MMM" + 800 -> "DCCC" + 80 -> "LXXX" + 8 -> "VIII")
+\`\`\`
     `,
   },
   {
     id: 8,
     title: 'string-calculator-kata',
     description: `
-    1. Create a simple String calculator with a method int Add(string numbers)
-  - The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
-  - Start with the simplest test case of an empty string and move to 1 and two numbers
+1. Create a simple String calculator with a method int \`Add(string numbers)\`
+  * The method can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0) for example “” or “1” or “1,2”
+  * Start with the simplest test case of an empty string and move to 1 and two numbers
 
 2. Allow the Add method to handle an unknown amount of numbers
-3. Allow the Add method to handle new lines between numbers (instead of commas).
-  - the following input is ok: “1\n2,3” (will equal 6)
-  - the following input is NOT ok: “1,\n” (not need to prove it - just clarifying)
+
+3. Allow the Add method to handle new lines between numbers (instead of commas)
+  * the following input is ok: \`1\n2,3\` (will equal 6)
+  * the following input is NOT ok: \`1,\n\` (not need to prove it - just clarifying)
 
 4. Support different delimiters
-  - to change a delimiter, the beginning of the string will contain a separate line that looks like this: “//[delimiter]\n[numbers…]” for example “//;\n1;2” should return three where the default delimiter is ‘;’ .
-  - the first line is optional. all existing scenarios should still be supported
+  * to change a delimiter, the beginning of the string will contain a separate line that looks like this: \`//[delimiter]\n[numbers…]\` for example \`//;\n1;2\` should return three where the default delimiter is \`;\`
+  * the first line is optional. All existing scenarios should still be supported
 
-5. Calling Add with a negative number will throw an exception “negatives not allowed” - and the negative that was passed.if there are multiple negatives, show all of them in the exception message
+5. Calling Add with a negative number will throw an exception \`negatives not allowed\` - and the negative that was passed. If there are multiple negatives, show all of them in the exception message
 6. Numbers bigger than 1000 should be ignored, so adding 2 + 1001 = 2
-7. Delimiters can be of any length with the following format: “//[delimiter]\n” for example: “//[***]\n1**_2_**3” should return 6
-8. Allow multiple delimiters like this: “//[delim1][delim2]\n” for example “//[][%]\n12%3” should return 6.
+7. Delimiters can be of any length with the following format: \`//[delimiter]\n\` for example: \`//[***]\n1**_2_**3\` should return 6
+8. Allow multiple delimiters like this: \`//[delim1][delim2]\n\` for example \`//[][%]\n12%3\` should return 6
 9. make sure you can also handle multiple delimiters with length longer than one char
     `,
   },
@@ -267,20 +281,16 @@ Examples:
     id: 9,
     title: 'tic-tac-toe-kata',
     description: `
-    ## rules:
+## Rules
+
 X always goes first.
 
-Players cannot play on a played position
+Players cannot play on a played position.
 
-Players alternate placing X’s and O’s on the board until either:
+Players alternate placing X's and O's on the board until either:
 
-    One player has three in a row, horizontally, vertically or diagonally
-    All nine squares are filled.
-
-If a player is able to draw three X’s or three O’s in a row, that player wins.
-
-If all nine squares are filled and neither player has three in a row, the game is a draw.
-
+  * One player has three in a row, horizontally, vertically or diagonally -> win
+  * All nine squares are filled -> draw
     `,
   },
   {
