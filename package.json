@@ -1,6 +1,6 @@
 {
   "name": "kataclism",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Bootstrapper for code kata in JavaScript",
   "keywords": [
     "code kata",
@@ -20,15 +20,17 @@
   },
   "files": [
     "/dist",
-    "templates/**/*"
+    "templates/**/*",
+    "README.md"
   ],
   "scripts": {
-    "build": "tsc",
+    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
     "test:once": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
-    "build:publish": "npm run build && cp README.md dist/README.md && npm publish"
+    "build": "tsc",
+    "build:clean": "rm -rf dist/**/*",
+    "build:publish": "npm run build:clean && npm build && npm publish"
   },
   "jest": {
     "roots": [
