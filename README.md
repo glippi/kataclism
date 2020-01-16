@@ -61,6 +61,15 @@ and this for `TypeScript`:
 |--README.MD
 ```
 
+## Supported languages
+
+|  language  |  cli flag  |  available  |
+|----|----|----|
+|  JavaScript  |  `''`  | :heavy_check_mark: |
+|  TypeScript  |  `-t`  | :heavy_check_mark:  |
+|  ReasonML  |  `tbd`   | :x:  |
+
+
 ## FAQ
 
 ##### How to run tests?
@@ -71,10 +80,10 @@ For more info about the *what* and the *why* behind katas, please check out [thi
 
 ##### Where can I find katas?
 Have a look to these resources:
-   * [awesome-katas](https://github.com/gamontal/awesome-katas)
-   * [CodeKata](http://codekata.com/)
-   * [Coding Dojo](http://codingdojo.org/kata/)
-   * [Codurance's katalyst](https://katalyst.codurance.com/)
+   * :link: [awesome-katas](https://github.com/gamontal/awesome-katas)
+   * :link: [CodeKata](http://codekata.com/)
+   * :link: [Coding Dojo](http://codingdojo.org/kata/)
+   * :link: [Codurance's katalyst](https://katalyst.codurance.com/)
 
 ## License
 
