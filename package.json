@@ -29,7 +29,7 @@
     "test:coverage": "jest --coverage",
     "build": "tsc",
     "build:clean": "rm -rf dist/",
-    "build:publish": "npm run build:clean && npm build && npm publish"
+    "build:publish": "npm run build:clean && npm run build && npm publish"
   },
   "jest": {
     "roots": [
