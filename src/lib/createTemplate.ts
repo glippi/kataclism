@@ -1,14 +1,14 @@
 import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
 import chalk from 'chalk'
 import { KATACLISM_ROOT_DIRECTORY } from '../constants'
+import { Language } from '../languages'
 
 export function createTemplate(
   kataName: string,
-  options: { t?: undefined } | { t: boolean },
+  language: Language,
   kataDescription: string = ''
 ) {
-  const templateType = options.t ? 'typescript' : 'javascript'
-  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
+  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${language.path}`
   const kataPath = `${process.cwd()}/${kataName}`
 
   if (test('-d', kataPath)) {
@@ -30,13 +30,9 @@ export function createTemplate(
   sed('-i', /("name":)(\s)("app_title")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{app_title}}', kataName, 'README.md')
   sed('-i', '{{description}}', kataDescription, 'README.md')
-  exec(
-    `git init -q && ${
-      templateType === 'javascript'
-        ? 'echo node_modules/ > .gitignore'
-        : 'echo node_modules/ > .gitignore && echo dist/ >> .gitignore'
-    }`
-  )
+
+  exec(`git init -q && ${language.gitCommand}`)
+
   console.log(chalk.green(`\nInstalling dependencies for ${kataName}`))
 
   exec('npm install')

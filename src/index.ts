@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { createTemplate } from './lib/createTemplate'
 import { chooseKata } from './lib/chooseKata'
 import { getKatasTitle } from './lib/getKatasList'
 import inquirer from 'inquirer'
 import cac from 'cac'
+import { supportedLanguages } from './languages'
+import { createKata } from './lib/createKata'
 
 const cli = cac()
 const allKatas = getKatasTitle()
@@ -12,10 +13,10 @@ const isCustomKata = process.argv.length > 2
 if (isCustomKata) {
   cli
     .command('create <kata>')
+    .option('-j, --javascript', 'Setup for Javascript')
     .option('-t, --typescript', 'Setup for TypeScript')
-    .action((kata: string, options: { t?: undefined } | { t: boolean }) => {
-      createTemplate(kata, options)
-    })
+    .option('-n, --netcore', 'Setup for Netcore')
+    .action(createKata)
 
   cli.parse()
 } else {
@@ -31,7 +32,7 @@ if (isCustomKata) {
         type: 'list',
         name: 'language',
         message: 'Select the language',
-        choices: ['javascript', 'typescript'],
+        choices: Object.keys(supportedLanguages),
       },
     ])
     .then((answers: any) => {
