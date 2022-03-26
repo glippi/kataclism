@@ -4,6 +4,6 @@ export function getKatasTitle(): string[] {
   return katasReadme.map((k: Kata) => k.title)
 }
 
-export function getKataDescription(title: string): string {
-  return katasReadme.filter((k: Kata) => k.title === title)[0].description
+export function getDescriptionKataByTitle(title: string): string {
+  return katasReadme.find(k => k.title === title)?.description ?? ''
 }
