@@ -3,7 +3,8 @@ const DEFAULT_LANGUAGE = 'javascript'
 export type Language = {
   path: string
   alias: string
-  gitCommand: string
+  installDependencies: string
+  commandForTest: string
 }
 
 export interface Languages {
@@ -16,17 +17,20 @@ export const supportedLanguages: Languages = {
   javascript: {
     path: 'javascript',
     alias: 'j',
-    gitCommand: 'echo node_modules/ > .gitignore',
+    installDependencies: 'npm install',
+    commandForTest: 'npm run test:watch',
   },
   typescript: {
     path: 'typescript',
     alias: 't',
-    gitCommand: 'echo node_modules/ > .gitignore && echo dist/ >> .gitignore',
+    installDependencies: 'npm install',
+    commandForTest: 'npm run test:watch',
   },
   netcore: {
     path: 'netcore',
     alias: 'n',
-    gitCommand: '',
+    installDependencies: 'dotnet build',
+    commandForTest: 'dotnet test',
   },
 }
 

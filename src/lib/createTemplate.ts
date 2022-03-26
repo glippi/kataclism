@@ -31,14 +31,14 @@ export function createTemplate(
   sed('-i', '{{app_title}}', kataName, 'README.md')
   sed('-i', '{{description}}', kataDescription, 'README.md')
 
-  exec(`git init -q && ${language.gitCommand}`)
+  exec('git init -q')
 
   console.log(chalk.green(`\nInstalling dependencies for ${kataName}`))
 
-  exec('npm install')
+  exec(language.installDependencies)
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
   console.log(chalk.cyan(`\tcd ${kataName}`))
-  console.log(chalk.cyan(`\tnpm run test:watch\n`))
+  console.log(chalk.cyan(`\t${language.commandForTest}\n`))
   console.log(chalk.green(`Happy hacking!`))
 }
