@@ -25,6 +25,7 @@ export function createTemplate(
   console.log(chalk.yellow('Generating kata folders...'))
   mkdir('-p', kataName)
   cp('-rf', `${templatePath}/*`, kataPath)
+  cp('-rf', `${templatePath}/.gitignore`, `${kataPath}/.gitignore`)
   cd(kataPath)
   console.log(chalk.green(`\nCreating ${kataName} at ${kataPath}`))
   sed('-i', /("name":)(\s)("app_title")/, `$1 "${kataName}"`, 'package.json')
