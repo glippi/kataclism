@@ -20,22 +20,24 @@ test('Check that the package which will be submitted to NPM contains all the fil
     .map((line: string) => removeFileInfoFrom(line))
     .join('\n')
 
-  expect(actualFiles).toBe(`package/LICENSE
-package/dist/lib/chooseKata.js
-package/dist/constants.js
-package/dist/lib/createTemplate.js
-package/dist/lib/getKatasList.js
-package/dist/index.js
+  expect(actualFiles).toBe(`package/templates/javascript/.gitignore
+package/templates/netcore/.gitignore
+package/templates/typescript/.gitignore
+package/LICENSE
+package/templates/netcore/Kata/YourAmazingProductionCode.cs
+package/templates/netcore/Kata/YourAmazingUnitTests.cs
+package/templates/netcore/Kata/Kata.csproj
 package/templates/javascript/src/index.js
 package/templates/javascript/test/index.test.js
-package/dist/lib/katasReadme.js
 package/package.json
 package/templates/javascript/package.json
 package/templates/typescript/package.json
 package/templates/typescript/tsconfig.json
 package/README.md
 package/templates/javascript/README.md
+package/templates/netcore/README.md
 package/templates/typescript/README.md
+package/templates/netcore/Kata.sln
 package/templates/typescript/test/index.test.ts
 package/templates/typescript/src/index.ts
 `)
