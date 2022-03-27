@@ -17,7 +17,7 @@ I created this package to **reduce the time spent on bootstrapping the kata stru
 To globally install kataclism run:
 
 ```console
-npm install -g kataclism
+npx kataclism
 ```
 
 ## How does it works?
@@ -60,20 +60,34 @@ and this for `TypeScript`:
 |--tsconfig.json
 |--README.MD
 ```
+and this for `Netcore`:
+```
+|--Kata
+   |---YourAwesomeProductionCode.cs
+   |---YourAmazingUnitTests.cs
+|--README.MD
+```
 
 ## Supported languages
 
 |  language  |  cli flag  |  available  |
 |----|----|----|
-|  JavaScript  |  `''`  | :heavy_check_mark: |
+|  JavaScript  |  `'-j'`  | :heavy_check_mark: |
 |  TypeScript  |  `-t`  | :heavy_check_mark:  |
+|  Netcore  |  `-n`  | :heavy_check_mark:  |
 |  ReasonML  |  `tbd`   | :x:  |
 
+> But by default language is Javascript
 
 ## FAQ
 
 ##### How to run tests?
-Execute `npm run test:once`, to run the tests once, or `npm run test:watch` to keep the tests executing on each change.
+> For Javascript and Typescript
+   * `npm run test:once`
+   * `npm run test:watch` for keep the tests executing on each change.
+   <br>
+> For Netcore
+   * `dotnet test`.
 
 ##### What are katas?
 For more info about the *what* and the *why* behind katas, please check out [this article](http://codekata.com/); and if you're courious about the history behind them [this one too](http://codekata.com/kata/codekata-how-it-started/).
