@@ -1,7 +1,7 @@
-import { getKatasTitle } from '../src/lib/getKatasList'
+import { Katas } from '../src/lib/katas'
 
 it('should verify the list of all available katas', () => {
-  const expectedKataList = getKatasTitle()
+  const expectedKataList = Katas.all
   const actual = [
     'fizz-buzz-kata',
     'leap-years-kata',

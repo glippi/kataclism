@@ -1,5 +1,5 @@
 export const RomanNumerals = {
-  title: 'roman-numerals-kata',
+  name: 'roman-numerals-kata',
   description: `
 Given a positive integer number lesser than 4000 (eg 42) determine its Roman numeral representation as a String (eg "XLII").
 

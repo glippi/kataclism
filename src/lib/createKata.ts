@@ -1,8 +1,13 @@
-import { getLanguageByParameter } from '../languages'
+import { KataTemplate } from '../kata'
+import { Languages } from '../languages'
 import { createTemplate } from './createTemplate'
 
-export function createKata(kata: string, options: any) {
-  const language = getLanguageByParameter(options)
+export const createKata = (kata: string, command: any) => {
+  const template: KataTemplate = {
+    name: kata,
+    description: '',
+    language: Languages.getByCommand(command),
+  }
 
-  createTemplate(kata, language)
+  createTemplate(template)
 }

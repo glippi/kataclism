@@ -1,5 +1,5 @@
 export const Bowling = {
-  title: 'bowling-kata',
+  name: 'bowling-kata',
   description: `
 Write a program to score a game of Ten-Pin Bowling.
 This online app can help you: [http://www.bowlinggenius.com/][http://www.bowlinggenius.com/]

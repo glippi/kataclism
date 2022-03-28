@@ -1,5 +1,5 @@
 export const XmasTree = {
-  title: 'christmas-tree',
+  name: 'christmas-tree',
   description: `
 Create a function \`christmasTree(height)\` that returns a christmas tree of the correct height.
 christmasTree(5) should return:

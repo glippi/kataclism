@@ -1,5 +1,5 @@
 export const FizzBuzz = {
-  title: 'fizz-buzz-kata',
+  name: 'fizz-buzz-kata',
   description: `
 Write a program that prints the numbers from 1 to 100, but if a number is a multiple of:
     * 3, print \`fizz\` instead of 3

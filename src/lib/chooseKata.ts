@@ -1,12 +1,20 @@
-import { supportedLanguages } from '../languages'
-import { CustomAnswer } from './answer'
+import { KataTemplate } from '../kata'
+import { SupportedLanguages, Languages } from '../languages'
 import { createTemplate } from './createTemplate'
-import { getDescriptionKataByTitle } from './getKatasList'
+import { Katas } from './katas'
 
-export function chooseKata(answers: CustomAnswer) {
+export const chooseKata = (answers: {
+  kata: string
+  language: keyof SupportedLanguages
+}) => {
   const { kata, language } = answers
-  const formatLanguageOption = supportedLanguages[language]
-  const kataDescription = getDescriptionKataByTitle(kata)
+  const selectedKata = Katas.getByName(kata)
+  const selectedLanguage = Languages.languages[language]
 
-  createTemplate(kata, formatLanguageOption, kataDescription)
+  const template: KataTemplate = {
+    ...selectedKata,
+    language: selectedLanguage,
+  }
+
+  createTemplate(template)
 }

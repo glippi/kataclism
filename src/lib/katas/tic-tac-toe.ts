@@ -1,5 +1,5 @@
 export const TicTacToe = {
-  title: 'tic-tac-toe-kata',
+  name: 'tic-tac-toe-kata',
   description: `
 ## Rules
 

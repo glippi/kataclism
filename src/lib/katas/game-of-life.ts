@@ -1,5 +1,5 @@
 export const GameOfLife = {
-  title: 'game-of-life-kata',
+  name: 'game-of-life-kata',
   description: `
 Implement a finite version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 

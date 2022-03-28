@@ -1,13 +1,11 @@
 import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
 import chalk from 'chalk'
 import { KATACLISM_ROOT_DIRECTORY } from '../constants'
-import { Language } from '../languages'
+import { KataTemplate } from '../kata'
 
-export function createTemplate(
-  kataName: string,
-  language: Language,
-  kataDescription: string = ''
-) {
+export const createTemplate = (kata: KataTemplate) => {
+  const { name: kataName, description: kataDescription, language } = kata
+
   const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${language.path}`
   const kataPath = `${process.cwd()}/${kataName}`
 
