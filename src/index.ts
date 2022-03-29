@@ -1,23 +1,33 @@
 #!/usr/bin/env node
-import { createTemplate } from './lib/createTemplate'
-import { chooseKata } from './lib/chooseKata'
-import { getKatasTitle } from './lib/getKatasList'
 import inquirer from 'inquirer'
 import cac from 'cac'
 
+import { Katas } from './lib/katas'
+import { Languages } from './languages'
+import { chooseKata } from './lib/chooseKata'
+import { createKata } from './lib/createKata'
+
 const cli = cac()
-const allKatas = getKatasTitle()
 const isCustomKata = process.argv.length > 2
 
 if (isCustomKata) {
-  cli
-    .command('create <kata>')
-    .option('-t, --typescript', 'Setup for TypeScript')
-    .action((kata: string, options: { t?: undefined } | { t: boolean }) => {
-      createTemplate(kata, options)
-    })
+  const command = cli.command('create <kata>')
 
-  cli.parse()
+  Languages.commands.forEach(option => {
+    command.option(
+      `-${option.alias}, --${option.fullAlias}`,
+      `Setup for ${option.name}`
+    )
+  })
+
+  command.action(createKata)
+  cli.help()
+
+  try {
+    cli.parse()
+  } catch (error) {
+    command.outputHelp()
+  }
 } else {
   inquirer
     .prompt([
@@ -25,13 +35,13 @@ if (isCustomKata) {
         type: 'list',
         name: 'kata',
         message: 'Select the kata you want to practice',
-        choices: allKatas,
+        choices: Katas.all,
       },
       {
         type: 'list',
         name: 'language',
         message: 'Select the language',
-        choices: ['javascript', 'typescript'],
+        choices: Languages.choices,
       },
     ])
     .then((answers: any) => {

@@ -1,19 +1,13 @@
 import { exec, sed, mkdir, cd, cp, test } from 'shelljs'
 import chalk from 'chalk'
-import { getKataDescription } from './getKatasList'
 import { KATACLISM_ROOT_DIRECTORY } from '../constants'
+import { KataTemplate } from '../kata'
 
-export function createTemplate(
-  kataName: string,
-  options: { t?: undefined } | { t: boolean },
-  kataDescription = false
-) {
-  const templateType = options.t ? 'typescript' : 'javascript'
-  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${templateType}`
+export const createTemplate = (kata: KataTemplate) => {
+  const { name: kataName, description: kataDescription, language } = kata
+
+  const templatePath = `${KATACLISM_ROOT_DIRECTORY}templates/${language.path}`
   const kataPath = `${process.cwd()}/${kataName}`
-  const kataDescriptionOrEmptyString = kataDescription
-    ? getKataDescription(kataName)
-    : ''
 
   if (test('-d', kataPath)) {
     console.error(`\n`)
@@ -28,22 +22,22 @@ export function createTemplate(
 
   console.log(chalk.yellow('Generating kata folders...'))
   mkdir('-p', kataName)
-  cp('-Rf', `/${templatePath}/*`, kataPath)
+  cp('-rf', `${templatePath}/*`, kataPath)
+  cp('-rf', `${templatePath}/.gitignore`, `${kataPath}/.gitignore`)
   cd(kataPath)
+  console.log(chalk.green(`\nCreating ${kataName} at ${kataPath}`))
   sed('-i', /("name":)(\s)("app_title")/, `$1 "${kataName}"`, 'package.json')
   sed('-i', '{{app_title}}', kataName, 'README.md')
-  sed('-i', '{{description}}', kataDescriptionOrEmptyString, 'README.md')
-  exec(
-    `git init && ${
-      templateType === 'javascript'
-        ? 'echo node_modules/ > .gitignore'
-        : 'echo node_modules/ > .gitignore && echo dist/ >> .gitignore'
-    }`
-  )
-  exec('npm install')
+  sed('-i', '{{description}}', kataDescription, 'README.md')
+
+  exec('git init -q')
+
+  console.log(chalk.green(`\nInstalling dependencies for ${kataName}`))
+
+  exec(language.installDependencies)
   console.log(chalk.green(`\nSuccess! Created ${kataName} at ${kataPath}\n`))
   console.log(chalk.green(`Start the kata by typing:\n`))
   console.log(chalk.cyan(`\tcd ${kataName}`))
-  console.log(chalk.cyan(`\tnpm run test:watch\n`))
+  console.log(chalk.cyan(`\t${language.commandForTest}\n`))
   console.log(chalk.green(`Happy hacking!`))
 }
