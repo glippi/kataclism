@@ -75,14 +75,13 @@ and this for `Netcore`:
 |  JavaScript  |  `'-j'`  | :heavy_check_mark: |
 |  TypeScript  |  `-t`  | :heavy_check_mark:  |
 |  Netcore  |  `-n`  | :heavy_check_mark:  |
-|  ReasonML  |  `tbd`   | :x:  |
 
-> But by default language is Javascript
+> But by default language is JavaScript
 
 ## FAQ
 
 ##### How to run tests?
-> For Javascript and Typescript
+> For JavaScript and TypeScript
    * `npm run test:once`
    * `npm run test:watch` for keep the tests executing on each change.
    <br>
