@@ -1,7 +1,7 @@
 export const LCDKata = {
   name: 'lcd-kata',
   description: `
-## Nots
+## Notes
 - Please do NOT read the next part before completing the previous one. Part of the purpose of this kata is to make you practice refactoring and adapting to changing requirements.
 - Take small steps. You should always be able to go to a green state (with all tests passing) quickly.
 - Stick to the red, green and refactor steps.
@@ -11,74 +11,74 @@ export const LCDKata = {
 
 ## Getting started
 
-\`\`\
+\`\`\`
   public string Convert(int number)
-\`\`\
+\`\`\`
 
 ### Part1
  - Write a program that given a number, converts into LCD style numbers using the following format.
 
- \`\`\
- _  _     _  _  _  _  _
+\`\`\`
+   _  _     _  _  _  _  _
  | _| _||_||_ |_   ||_||_|
  ||_  _|  | _||_|  ||_| _|
- \`\`\
+\`\`\`
 
 (each digit is 3 lines high)
- \`\`\
+\`\`\`
 Given a number 1
 When convert to LCD style
 Then they would see:
-\`\`\
+\`\`\`
 
-\`\`\
+\`\`\`
 |
 |
-\`\`\
+\`\`\`
 
 ### Part2
  - Follow the previous statement, but now the program must allow numbers greater than 9.
 
- \`\`\
- _  _     _  _  _  _  _
- | _| _||_||_ |_   ||_||_|
- ||_  _|  | _||_|  ||_| _|
- \`\`\
+\`\`\`
+  _  _     _  _  _  _  _
+| _| _||_||_ |_   ||_||_|
+||_  _|  | _||_|  ||_| _|
+\`\`\`
 
 (each digit is 3 lines high)
- \`\`\
+\`\`\`
  Given a number 13
  When convert to LCD style
  Then they would see:
-\`\`\
+\`\`\`
 
-\`\`\
+\`\`\`
   _
 | _|
 | _|
-\`\`\
+\`\`\`
 
 ### Part3
  - Now, refactor the program so that it now accepts letters, converts into LCD style letters, using the following format.
 
- \`\`\
-  __   __   __  ___   __  __  __
- |__| |__| |     | | |__ |__ |__
- |  | |__| |__  _|_| |__ |   |__|
- \`\`\
+\`\`\`
+ __   __   __  ___   __  __  __
+|__| |__| |     | | |__ |__ |__
+|  | |__| |__  _|_| |__ |   |__|
+\`\`\`
 
 (each digit is 3 lines high)
- \`\`\
+\`\`\`
  Given a word HELLO
  When convert to LCD style
  Then they would see:
-\`\`\
+\`\`\`
 
-\`\`\
+\`\`\`
  __               __
 |__| |__ |   |   |  |
 |  | |__ |__ |__ |__|
-\`\`\
+\`\`\`
 
 `,
 }
