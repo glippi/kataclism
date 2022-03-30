@@ -1,14 +1,25 @@
 export const Bank = {
   name: 'bank-kata',
   description: `
+## Instructions
+
 Think of your personal bank account experience When in doubt, go for the simplest solution.
 Requirements:
 
-- Deposit and Withdrawal
-- Transfer
-- Account statement (date, amount, balance)
-- Statement printing
-- Statement filters (just deposits, withdrawal, date)
+\`\`\`
+public interface AccountService
+{
+    void deposit(int amount)
+    void withdraw(int amount)
+    void printStatement()
+}
+\`\`\`
+
+## Rules
+
+- You cannot change the public interface of this class.
+
+## Desired Behaviour
 
 \`\`\`
 Given a client makes a deposit of 1000 on 10-01-2012
@@ -21,5 +32,5 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 \`\`\`
-  `,
+`,
 }

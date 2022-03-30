@@ -1,6 +1,8 @@
 export const GameOfLife = {
   name: 'game-of-life-kata',
   description: `
+## Instructions
+
 Implement a finite version of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 
 Here are the rules (courtesy of Wikipedia):
@@ -23,7 +25,7 @@ public class GameOfLife {
 }
 \`\`\`
 
-### Notes
+## Notes
 
   * The dimensions of the array stay constant throughout the game - the 'universe' never grows.
   * Cells outside the bounds of the array should be considered permanently dead (they never come to life).
