@@ -10,6 +10,7 @@ import { RomanNumerals } from './katas/roman-numerals'
 import { StringCalculator } from './katas/string-calculator'
 import { TicTacToe } from './katas/tic-tac-toe'
 import { XmasTree } from './katas/xmas-tree'
+import { LCDKata } from './katas/lcd-kata'
 
 const katasReadme: Kata[] = [
   FizzBuzz,
@@ -22,6 +23,7 @@ const katasReadme: Kata[] = [
   MarsRover,
   TicTacToe,
   XmasTree,
+  LCDKata,
 ]
 
 export class Katas {
