@@ -1,12 +1,16 @@
 export const Bowling = {
   name: 'bowling-kata',
   description: `
+## Instructions
+
 Write a program to score a game of Ten-Pin Bowling.
 This online app can help you: [http://www.bowlinggenius.com/][http://www.bowlinggenius.com/]
 
 _Input_: string (described below) representing a bowling game
 _Ouput_: integer score
 The scoring rules
+
+## Rules
 
 Each game, or "line" of bowling, includes ten turns, or "frames" for the bowler.
 
@@ -21,7 +25,8 @@ If, after both balls, there is still at least one of the ten pins standing the s
 If you get a spare in the last (10th) frame you get one more bonus ball. If you get a strike in the last (10th) frame you get two more bonus balls. These bonus throws are taken as part of the same turn. If a bonus ball knocks down all the pins, the process does not repeat. The bonus balls are only used to calculate the score of the final frame.
 
 The game score is the total of all frame scores.
-Symbol meanings
+
+## Symbol meanings
 
     X indicates a strike
     / indicates a spare
@@ -29,7 +34,7 @@ Symbol meanings
     | indicates a frame boundary
     The characters after the || indicate bonus balls
 
-Examples
+## Examples
 
 X|X|X|X|X|X|X|X|X|X||XX
 Ten strikes on the first ball of all ten frames.
