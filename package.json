@@ -26,8 +26,9 @@
     "prettier": "npx prettier --write --list-different --parser typescript \"src/**/*.ts\"",
     "test:once": "jest",
     "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage",
+    "test:integration": "jest --findRelatedTests test/integration.test.ts test/katas.test.ts",
     "build": "tsc",
+    "postbuild": "jest test/distFiles.test.ts",
     "build:clean": "rm -rf dist/",
     "build:publish": "npm run build:clean && npm run build && npm publish"
   },
