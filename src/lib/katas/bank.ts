@@ -1,10 +1,10 @@
 export const Bank = {
   name: 'bank-kata',
   description: `
+## Instructions
+
 Think of your personal bank account experience When in doubt, go for the simplest solution.
 Requirements:
-
-## Instructions
 
 \`\`\`
 public interface AccountService
