@@ -63,7 +63,7 @@ and this for `TypeScript`:
 and this for `Netcore`:
 ```
 |--Kata
-   |---YourAwesomeProductionCode.cs
+   |---YourAmazingProductionCode.cs
    |---YourAmazingUnitTests.cs
 |--README.MD
 ```
