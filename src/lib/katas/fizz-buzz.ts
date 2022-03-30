@@ -1,12 +1,14 @@
 export const FizzBuzz = {
   name: 'fizz-buzz-kata',
   description: `
-Write a program that prints the numbers from 1 to 100, but if a number is a multiple of:
-    * 3, print \`fizz\` instead of 3
-    * 5, print \`buzz\` instead of 5
-    * 3 and 5, print \`fizzbuzz\`
+## Instructions
 
-Sample output:
+Write a program that prints the numbers from 1 to 100, but if a number is a multiple of:
+- If the number is a multiple of three, return the string "Fizz".
+- If the number is a multiple of five, return the string "Buzz".
+- If the number is a multiple of both three and five, return the string "FizzBuzz".
+
+## Sample output
 
 \`\`\`
 1
